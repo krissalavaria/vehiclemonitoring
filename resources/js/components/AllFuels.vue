@@ -1,47 +1,32 @@
 <template>
     <div>
         <div class="card">
-            <div class="card-header">
-                <router-link class="btn btn-primary col-sm-2" :to="{name: 'addFuel'}"><span class="fa fa-oil pr-2"></span> Add Fuels Rate</router-link>
-            </div>
+          <div class="card-header">
+              <router-link class="btn btn-primary col-sm-2" :to="{name: 'addFuel'}"><span class="fa fa-user pr-2"></span> Add Fuel</router-link>
+          </div>
             <div class="card-body">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Vehicle Registration Number</th>
-                        <th>Date</th>
-                        <th>Odometer</th>
-                        <th>Fuel Type</th>
-                        <th>Reference Number</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr v-for="fuel in fuels" :key="fuel.id">
-                        <td>{{ fuel.id }}</td>
-                        <td>{{ fuel.vehicle_registration_number }}</td>
-                        <td>{{ fuel.date }}</td>
-                        <td>{{ fuel.odometer }}</td>
-                        <td>{{ fuel.fuel_type }}</td>
-                        <td>{{ fuel.reference_number }}</td>
-                        <td>{{ fuel.created_at }}</td>
-                        <td>{{ fuel.updated_at }}</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <router-link :to="{name: 'editFuel', params: { id: fuel.id }}" class="btn btn-warning"><span class="fa fa-edit" style="color:white;"></span>
-                                </router-link>
-                                <button class="btn btn-danger" @click="deleteFuel(fuel.id)"><span class="fa fa-trash" style="color:white;"></span></button>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div id="">
+                </div>
+                <vue-good-table
+                    :pagination-options="{
+                        enabled: true,
+                    }"
+                    :columns="columns"
+                    :rows="fuels"
+                    :search-options="{
+                        enabled: true
+                    }"
+                    :sort-options="{
+                        enabled: true,
+                    }"
+                    styleClass="vgt-table striped">
+                    <template slot="table-row" slot-scope="props">
+                        <span v-if="props.column.field == 'actions'">
+                        </span>
+                    </template>
+                </vue-good-table>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -49,7 +34,47 @@
     export default {
         data() {
             return {
-                fuels: []
+                fuels: [],
+                columns: [
+                    {
+                        label: 'ID',
+                        field: 'id',
+                    },
+                    {
+                        label: 'Registration Number',
+                        field: 'vehicle_registration_number',
+                    },
+                    {
+                        label: 'Date',
+                        field: 'date',
+                    },
+                    {
+                        label: 'Odometer',
+                        field: 'odometer',
+                    },
+                    {
+                        label: 'Fuel Type',
+                        field: 'fuel_type',
+                    },
+                    {
+                        label: 'Reference Number',
+                        field: 'reference_number',
+                    },
+                    {
+                        label: 'Created At',
+                        field: 'created_at',
+                    },
+                    {
+                        label: 'Update At',
+                        field: 'updated_at',
+                    },
+                    {
+                        label: 'Action',
+                        field: this.fuelId,
+                        html: true,
+                    }
+                ],
+                rows: [],
             }
         },
         created() {
@@ -60,14 +85,10 @@
                 });
         },
         methods: {
-            deleteFuel(id) {
-                this.axios
-                    .delete(`http://localhost:8000/api/fuel/delete/${id}`)
-                    .then(response => {
-                        let i = this.fuels.map(item => item.id).indexOf(id); // find index of your object
-                        this.fuels.splice(i, 1)
-                    });
-            }
+            fuelId(rowObj) {
+                var id = rowObj.id;
+                return '<div class="d-flex"><a class="btn btn-warning" href="/editFuel/'+id+'"><span class="fa fa-edit" style="color:white;"></span></a></div>';
+            },
         }
     }
 </script>

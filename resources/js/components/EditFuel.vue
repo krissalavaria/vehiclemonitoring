@@ -26,8 +26,11 @@
                         <label>Reference</label>
                         <input type="text" class="form-control" placeholder="Reference Number" v-model="fuel.reference_number">
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Fuel</button>
-                    <router-link class="btn btn-danger col-sm-2 pr-2" to="/fuels.fuelmain">Back</router-link>
+                    <button type="submit" class="btn btn-warning"><span class="fa fa-edit" style="color:white"></span></button>
+                    <button type="submit" class="btn btn-danger" @click="deleteFuel(fuel.id)">
+                        <span class="fa fa-trash" style="color:white;"></span>
+                    </button>
+                    <router-link class="btn btn-primary pr-2" to="/fuels.fuelmain">Back</router-link>
                 </form>
             </div>
         </div>
@@ -56,6 +59,17 @@
                     .then((response) => {
                         this.$router.push({name: 'fuelmain'});
                     });
+            },
+            deleteFuel(id) {
+            this.axios
+                .delete(`http://localhost:8000/api/fuel/delete/${id}`)
+                .then(response => {
+                    this.$router.push({
+                        name: 'fuelmain'
+                    });
+                    let i = this.fuels.map(item => item.id).indexOf(id); // find index of your object
+                    this.fuels.splice(i, 1);
+                });
             }
         }
     }

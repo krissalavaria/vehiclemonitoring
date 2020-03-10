@@ -1,49 +1,32 @@
 <template>
     <div>
         <div class="card">
-            <div class="card-header">
-                <router-link class="btn btn-primary col-sm-2" :to="{name: 'addDriver'}"><span class="fa fa-car pr-2"></span> Add Driver</router-link>
-            </div>
+          <div class="card-header">
+              <router-link class="btn btn-primary col-sm-2" :to="{name: 'addDriver'}"><span class="fa fa-user pr-2"></span> Add Driver</router-link>
+          </div>
             <div class="card-body">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Contact Number</th>
-                        <th>License No.</th>
-                        <th>License Exp. Date</th>
-                        <th>Driver Address</th>
-                        <th>Driver Status</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr v-for="driver in drivers" :key="driver.id">
-                        <td>{{ driver.id }}</td>
-                        <td>{{ driver.driver_name }}</td>
-                        <td>{{ driver.contact_number }}</td>
-                        <td>{{ driver.license_number }}</td>
-                        <td>{{ driver.license_expiration }}</td>
-                        <td>{{ driver.driver_address }}</td>
-                        <td>{{ driver.driver_status }}</td>
-                        <td>{{ driver.created_at }}</td>
-                        <td>{{ driver.updated_at }}</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <router-link :to="{name: 'editDriver', params: { id: driver.id }}" class="btn btn-warning"><span class="fa fa-edit" style="color:white;"></span>
-                                </router-link>
-                                <button class="btn btn-danger" @click="deleteDriver(driver.id)"><span class="fa fa-trash" style="color:white;"></span></button>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div id="">
+                </div>
+                <vue-good-table
+                    :pagination-options="{
+                        enabled: true,
+                    }"
+                    :columns="columns"
+                    :rows="drivers"
+                    :search-options="{
+                        enabled: true
+                    }"
+                    :sort-options="{
+                        enabled: true,
+                    }"
+                    styleClass="vgt-table striped">
+                    <template slot="table-row" slot-scope="props">
+                        <span v-if="props.column.field == 'actions'">
+                        </span>
+                    </template>
+                </vue-good-table>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -51,7 +34,51 @@
     export default {
         data() {
             return {
-                drivers: []
+                drivers: [],
+                columns: [
+                    {
+                        label: 'ID',
+                        field: 'id',
+                    },
+                    {
+                        label: 'Driver Name',
+                        field: 'driver_name',
+                    },
+                    {
+                        label: 'Contact Number',
+                        field: 'contact_number',
+                    },
+                    {
+                        label: 'License Number',
+                        field: 'license_number',
+                    },
+                    {
+                        label: 'License Expiration',
+                        field: 'license_expiration',
+                    },
+                    {
+                        label: 'Driver Address',
+                        field: 'driver_address',
+                    },
+                    {
+                        label: 'Driver Status',
+                        field: 'driver_status',
+                    },
+                    {
+                        label: 'Created At',
+                        field: 'created_at',
+                    },
+                    {
+                        label: 'Update At',
+                        field: 'updated_at',
+                    },
+                    {
+                        label: 'Action',
+                        field: this.driverId,
+                        html: true,
+                    }
+                ],
+                rows: [],
             }
         },
         created() {
@@ -62,14 +89,10 @@
                 });
         },
         methods: {
-            deleteDriver(id) {
-                this.axios
-                    .delete(`http://localhost:8000/api/driver/delete/${id}`)
-                    .then(response => {
-                        let i = this.drivers.map(item => item.id).indexOf(id); // find index of your object
-                        this.driver.splice(i, 1)
-                    });
-            }
+            driverId(rowObj) {
+                var id = rowObj.id;
+                return '<div class="d-flex"><a class="btn btn-warning" href="/editDriver/'+id+'"><span class="fa fa-edit" style="color:white;"></span></a></div>';
+            },
         }
     }
 </script>

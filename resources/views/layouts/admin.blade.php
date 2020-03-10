@@ -15,10 +15,10 @@
     <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar" class="in-active">
       <br>
-      <h1><a href="index.html" class="logo">A.</a></h1>
+      <h1><a href="index.html" class="logo">ADMIN.</a></h1>
       <ul class="list-unstyled components mb-5">
         <li class="">
-          <a href="/admin"><span class="fa fa-home"></span> Home</a>
+          <a href="/admins.adminmain"><span class="fa fa-home"></span> Dashboard</a>
         </li>
         <li class="">
           <a href="/vehicles.vehiclemain"><span class="fa fa-car"></span>Vehicles</a>
@@ -30,9 +30,19 @@
           <a href="/fuels.fuelmain"><span class="fa fa-tint"></span> Fuel Rate</a>
         </li>
         <li class="">
-          <a href="/reports.reportmain"><span class="fa fa-sticky-note"></span>Reports</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-sticky-note"></span>Reports</a>
+            <div class="col-sm-4 dropdown-menu">
+              <a class="dropdown-item" href="#" style="color: black">Per Vehicle Fuel Expenses</a>
+              <a class="dropdown-item" href="#" style="color: black">Date to Date Per Vehicle Fuel Expenses Report</a>
+              <a class="dropdown-item" href="#" style="color: black">Date to Date All Vehicle Fuel Expenses Report</a>
+              <a class="dropdown-item" href="#" style="color: black">All Requests Reports</a>
+              <a class="dropdown-item" href="#" style="color: black">Date to Date All Requests Reports</a>
+              <a class="dropdown-item" href="#" style="color: black">Per Customer Reports</a>
+              <a class="dropdown-item" href="#" style="color: black">Date to Date per customer reports</a>
+            </div>
         </li>
       </ul>
+
       <div class="footer">
         <p>
           Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
@@ -74,6 +84,6 @@
   <script src="{{ asset('js/popper.js') }}" type="text/javascript"></script>
   <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
   <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
-  
+
 </body>
 </html>

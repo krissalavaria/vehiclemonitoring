@@ -39,7 +39,7 @@ Route::group([
 
 Route::get('fuels', 'FuelsController@index');
 Route::group([
-    'prefix' => 'fuel'], 
+    'prefix' => 'fuel'],
     function () {
     Route::post('add', 'FuelsController@add');
     Route::get('edit/{id}', 'FuelsController@edit');
@@ -47,4 +47,13 @@ Route::group([
     Route::delete('delete/{id}', 'FuelsController@delete');
 });
 
-Route::get('vales', 'ValeController@getArray');
+Route::get('admins', 'ValesController@indexarray');
+Route::get('vales', 'ValeController@indexarray');
+Route::group(['prefix' => 'vale'], function () {
+    Route::post('addAdmin', 'ValeController@addarray');
+    Route::get('edit/{id}', 'ValeController@editarray');
+    Route::post('update/{id}', 'ValeController@updatearray');
+    Route::delete('delete/{id}', 'ValeController@deletearray');
+});
+
+Route::get('totalamount', 'ValeController@totalamount');

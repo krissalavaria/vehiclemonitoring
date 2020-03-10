@@ -17,6 +17,7 @@
           <thead>
               <tr>
                 <td>ID</td>
+                <td>Receipt Number</td>
                 <td>Customer Name</td>
                 <td>Date</td>
                 <td>Address</td>
@@ -32,6 +33,7 @@
               @foreach($vales as $vale)
               <tr>
                   <td>{{$vale->id}}</td>
+                  <td>{{$vale->receipt_number}}</td>
                   <td>{{$vale->customer_name}}</td>
                   <td>{{$vale->date}}</td>
                   <td>{{$vale->address}}</td>

@@ -17,8 +17,12 @@
     @endif
       <form method="post" action="{{ route('vales.store') }}">
           <div class="form-row">
+              @csrf
               <div class="col">
-                @csrf
+                <label for="receipt_number">Receipt Number:</label>
+                <input type="text" class="form-control" name="receipt_number" id="receipt_number" placeholder="Receipt Number" value="To be Updated" readonly />
+              </div>
+              <div class="col">
                 <label for="customer_name">Customer Name:</label>
                 <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="Input Customer Name" />
               </div>
@@ -40,10 +44,18 @@
           <div class="form-row">
               <div class="col">
                 <label for="description">Description:</label>
-                <input type="text" class="form-control" name="description" id="description" placeholder="Input Description" value="To be Updated" readonly/>
+                <select class="form-control" name="description" id="description">
+                  <option value="Diesel">Diesel</option>
+                  <option value="Blaze">Blaze</option>
+                  <option value="XCS Plus">XCS Plus</option>
+                  <option value="Extra Advance">Extra Advance</option>
+                  <option value="Turbo">Turbo</option>
+                  <option value="Motor Oils">Motor Oils</option>
+                  <option value="Others">Others</option>
+                </select>
               </div>
               <div class="col">
-                <label for="quantity">Quantity:</label>
+                <label for="quantity">Quantity per Liter(s):</label>
                 <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Input Quantity" value="0" readonly/>
               </div>
               <div class="col">

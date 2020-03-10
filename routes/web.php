@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Datatables Testing
-Route::get('/users', 'UsersController@getUsers');
-Route::delete('/users/{user}/delete', 'UsersController@deleteUser');
+Route::resource('vales', 'ValeController');
 
 // View Composer to pass Data on all Views
 View::composer(['*'], function($view) {
@@ -26,7 +24,7 @@ View::composer(['*'], function($view) {
 });
 
 // Admin Routes
-Route::get('admin', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+Route::get('admins.adminmain', 'ValeController@adminmain')->name('admin.main')->middleware('is_admin');
 
 //Authentication Routes
 Auth::routes();
@@ -47,4 +45,8 @@ Route::get('{any}', function () {
 
 Route::get('{any}', function () {
   return view('fuels.fuelmain');
+})->where('any', '.*')->middleware('is_admin');
+
+Route::get('{any}', function () {
+  return view('admin.adminmain');
 })->where('any', '.*')->middleware('is_admin');

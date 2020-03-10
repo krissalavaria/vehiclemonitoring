@@ -30,8 +30,11 @@
                         <label>Status</label>
                         <input type="text" class="form-control" placeholder="Status" v-model="driver.driver_status">
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Driver</button>
-                    <router-link class="btn btn-danger col-sm-2 pr-2" to="/drivers.drivermain">Back</router-link>
+                    <button type="submit" class="btn btn-warning"><span class="fa fa-edit" style="color:white"></span></button>
+                    <button type="submit" class="btn btn-danger" @click="deleteDriver(driver.id)">
+                        <span class="fa fa-trash" style="color:white;"></span>
+                    </button>
+                    <router-link class="btn btn-primary pr-2" to="/drivers.drivermain">Back</router-link>
                 </form>
             </div>
         </div>
@@ -60,6 +63,17 @@
                     .then((response) => {
                         this.$router.push({name: 'drivermain'});
                     });
+            },
+            deleteDriver(id) {
+            this.axios
+                .delete(`http://localhost:8000/api/driver/delete/${id}`)
+                .then(response => {
+                    this.$router.push({
+                        name: 'drivermain'
+                    });
+                    let i = this.drivers.map(item => item.id).indexOf(id); // find index of your object
+                    this.drivers.splice(i, 1);
+                });
             }
         }
     }

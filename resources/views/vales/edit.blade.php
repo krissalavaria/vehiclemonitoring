@@ -19,8 +19,12 @@
         @csrf
         @method('PUT')
         <div class="form-row">
+            @csrf
             <div class="col">
-              @csrf
+              <label for="receipt_number">Receipt Number:</label>
+              <input type="text" class="form-control" name="receipt_number" id="receipt_number" value={{ $vale->receipt_number }} />
+            </div>
+            <div class="col">
               <label for="customer_name">Customer Name:</label>
               <input type="text" class="form-control" name="customer_name" id="customer_name" value={{ $vale->customer_name }} />
             </div>

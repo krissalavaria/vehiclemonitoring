@@ -17,13 +17,13 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(Vale::class, function (Faker $faker) {
-    $number = 10;
+    $number = 20;
     return [
         'customer_name' => $faker->name(),
         'date' => $faker->dateTime(),
         'address' => $faker->city(),
-        'plate_number' => $faker->text(),
-        'description' => $faker->text(),
+        'plate_number' => $faker->uuid(),
+        'description' => $faker->name(),
         'quantity' => $faker->numberBetween(1,200),
         'unit_cost' => $faker->numberBetween(1,200),
         'total_amount' => $faker->numberBetween(1,200),

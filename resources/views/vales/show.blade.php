@@ -55,43 +55,85 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><input type="checkbox"> Diesel</td>
+                    <td>
+                      @if($vale->description == 'Diesel')
+                        <input type="checkbox" checked> Diesel
+                      @else
+                        <input type="checkbox"> Diesel
+                      @endif
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><input type="checkbox"> Blaze</td>
+                    <td>
+                      @if($vale->description == 'Blaze')
+                        <input type="checkbox" checked> Blaze
+                      @else
+                        <input type="checkbox"> Blaze
+                      @endif
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><input type="checkbox"> XCS PLUS</td>
+                    <td>
+                      @if($vale->description == 'XCS Plus')
+                        <input type="checkbox" checked> XCS Plus
+                      @else
+                        <input type="checkbox"> XCS PLUS
+                      @endif
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><input type="checkbox"> Extra Advance</td>
+                    <td>
+                      @if($vale->description == 'Extra Advance')
+                        <input type="checkbox" checked> Extra Advance
+                      @else
+                        <input type="checkbox"> Extra Advance
+                      @endif
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><input type="checkbox"> Motor Oils</td>
+                    <td>
+                      @if($vale->description == 'Motor Oils')
+                        <input type="checkbox" checked> Motor Oils
+                      @else
+                        <input type="checkbox"> Motor Oils
+                      @endif
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><input type="checkbox"> Turbo</td>
+                    <td>
+                      @if($vale->description == 'Turbo')
+                        <input type="checkbox" checked> Turbo
+                      @else
+                        <input type="checkbox"> Turbo
+                      @endif
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td><input type="checkbox"> Others</td>
+                    <td>
+                      @if($vale->description == 'Others')
+                        <input type="checkbox" checked> Others
+                      @else
+                        <input type="checkbox"> Others
+                      @endif
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -130,7 +172,7 @@
     print_area.document.close();
     print_area.focus();
     print_area.print();
-    
+
   }
 </script>
 @endsection

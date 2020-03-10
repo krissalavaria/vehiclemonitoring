@@ -14,12 +14,16 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 import {routes} from './routes';
 import VueGoodTablePlugin from 'vue-good-table';
-
 import 'vue-good-table/dist/vue-good-table.css';
+import JsonExcel from 'vue-json-excel';
+import downloadexcel from 'vue-json-excel';
+import Chartkick from 'vue-chartkick';
+import Chart from 'chart.js';
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(VueGoodTablePlugin);
+Vue.use(Chartkick.use(Chart));
 
 /**
  * The following block of code may be used to automatically register your
@@ -33,7 +37,8 @@ Vue.use(VueGoodTablePlugin);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('downloadExcel', JsonExcel);
+Vue.component('downloadexcel', downloadexcel);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

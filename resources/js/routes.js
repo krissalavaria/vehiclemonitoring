@@ -7,6 +7,9 @@ import EditDriver from './components/EditDriver.vue';
 import AllFuels from './components/AllFuels.vue';
 import AddFuel from './components/AddFuel.vue';
 import EditFuel from './components/EditFuel.vue';
+import Admin from './components/Admin.vue';
+import AddAdmin from './components/AddAdmin.vue';
+import EditAdmin from './components/EditAdmin.vue';
 
 export const routes = [
     {
@@ -36,7 +39,7 @@ export const routes = [
     },
     {
         name: 'editDriver',
-        path: '/edit/:id',
+        path: '/editDriver/:id',
         component: EditDriver
     },
     {
@@ -51,7 +54,22 @@ export const routes = [
     },
     {
         name: 'editFuel',
-        path: '/edit/:id',
+        path: '/editFuel/:id',
         component: EditFuel
+    },
+    {
+        name: 'adminmain',
+        path: '/admins.adminmain',
+        component: Admin
+    },
+    {
+        name: 'editAdmin',
+        path: '/editAdmin/:id',
+        component: EditAdmin
+    },
+    {
+        name: 'addAdmin',
+        path: '/addAdmin',
+        component: AddAdmin
     }
 ];

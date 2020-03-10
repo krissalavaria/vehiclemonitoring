@@ -8,7 +8,6 @@ use Redirect;
 use Response;
 use DB;
 use Config;
-use Datatables;
 
 class ValeController extends Controller
 {
@@ -23,16 +22,58 @@ class ValeController extends Controller
         return view('vales.index', compact('vales'));
     }
 
-    public function getArray()
+    public function adminmain()
     {
-        $vales = Vale::all()->toArray();
-        return array_reverse($vales);
+      return view('admin.adminmain');
     }
 
-    public function getdata()
+    public function totalamount()
     {
-        $vales = Vale::select('customer_name', 'date', 'address', 'plate_number', 'description', 'quantity', 'unit_cost', 'total_amount');
-        return Datatables::of($vales)->make(true);
+      return Vale::whereMonth('date', date('m'))->sum('total_amount');
+    }
+
+    public function indexarray()
+    {
+        $valesarray = Vale::all()->toArray();
+        return array_reverse($valesarray);
+    }
+
+    public function addarray(Request $request)
+    {
+      $valesarray = new Vale([
+        'customer_name' => $request->input('customer_name'),
+        'date' => $request->input('date'),
+        'address' => $request->input('address'),
+        'plate_number' => $request->input('plate_number'),
+        'description' => $request->input('description'),
+        'quantity' => $request->input('quantity'),
+        'unit_cost' => $request->input('unit_cost'),
+        'total_amount' => $request->input('total_amount'),
+        'receipt_number' => $request->input('receipt_number'),
+      ]);
+      return response()->json('Request successfully added.');
+    }
+
+    public function editarray($id)
+    {
+      $valesarray = Vale::find($id);
+      return response()->json($valesarray);
+    }
+
+    public function updatearray($id, Request $request)
+    {
+      $valesarray = Vale::find($id);
+      $valesarray->update($request->all());
+
+      return response()->json('Request successfully updated!');
+    }
+
+    public function deletearray($id)
+    {
+      $valesarray = Vale::find($id);
+      $valesarray->delete();
+
+      return response()->json('Request deleted.');
     }
 
     /**
@@ -106,6 +147,7 @@ class ValeController extends Controller
             'quantity' => 'required',
             'unit_cost' => 'required',
             'total_amount' => 'required',
+            'receipt_number' => 'required',
         ]);
 
         $vale->update($request->all());
