@@ -6,9 +6,15 @@
           </div>
           <div class="card-body">
               <form @submit.prevent="updateAdmin">
-                  <div class="form-group">
-                      <label>Customer Name</label>
-                      <input type="text" class="form-control" placeholder="Customer Name" v-model="vale.customer_name">
+                  <div class="form-row">
+                    <div class="col">
+                        <label>Form Status</label>
+                        <input type="text" class="form-control" placeholder="Form Status" v-model="vale.form_status">
+                    </div>
+                    <div class="col">
+                        <label>Customer Name</label>
+                        <input type="text" class="form-control" placeholder="Customer Name" v-model="vale.customer_name">
+                    </div>
                   </div>
                   <div class="form-group">
                       <label>Date</label>

@@ -15,6 +15,7 @@ class Vale extends Model
       'quantity',
       'unit_cost',
       'total_amount',
-      'receipt_number'
+      'receipt_number',
+      'form_status'
     ];
 }

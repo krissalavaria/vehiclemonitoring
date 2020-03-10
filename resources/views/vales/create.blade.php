@@ -18,6 +18,10 @@
       <form method="post" action="{{ route('vales.store') }}">
           <div class="form-row">
               @csrf
+              <div class="col" style="display: none;">
+                <label for="form_status">Form Status</label>
+                <input type="text" class="form-control" name="form_status" id="form_status" placeholder="Form Status" value="Pending" />
+              </div>
               <div class="col">
                 <label for="receipt_number">Receipt Number:</label>
                 <input type="text" class="form-control" name="receipt_number" id="receipt_number" placeholder="Receipt Number" value="To be Updated" readonly />

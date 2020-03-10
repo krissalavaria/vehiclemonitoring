@@ -50,6 +50,7 @@ class ValeController extends Controller
         'unit_cost' => $request->input('unit_cost'),
         'total_amount' => $request->input('total_amount'),
         'receipt_number' => $request->input('receipt_number'),
+        'form_status' => $request->input('receipt_number'),
       ]);
       return response()->json('Request successfully added.');
     }
@@ -148,6 +149,7 @@ class ValeController extends Controller
             'unit_cost' => 'required',
             'total_amount' => 'required',
             'receipt_number' => 'required',
+            'form_status' => 'required'
         ]);
 
         $vale->update($request->all());

@@ -21,6 +21,10 @@
         <div class="form-row">
             @csrf
             <div class="col">
+              <label for="receipt_number">Form Status:</label>
+              <input type="text" class="form-control" name="form_status" id="form_status" value={{ $vale->form_status }} />
+            </div>
+            <div class="col">
               <label for="receipt_number">Receipt Number:</label>
               <input type="text" class="form-control" name="receipt_number" id="receipt_number" value={{ $vale->receipt_number }} />
             </div>

@@ -1973,6 +1973,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2349,6 +2359,9 @@ __webpack_require__.r(__webpack_exports__);
       columns: [{
         label: 'ID',
         field: 'id'
+      }, {
+        label: 'Status',
+        field: 'form_status'
       }, {
         label: 'Customer Name',
         field: 'customer_name'
@@ -2733,6 +2746,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -92440,7 +92459,7 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "card" }, [
       _c("div", { staticClass: "card-header" }, [
-        _vm._v("\n            Add Request Form\n        ")
+        _vm._v("\r\n            Add Request Form\r\n        ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
@@ -92455,31 +92474,90 @@ var render = function() {
             }
           },
           [
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Customer Name")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.vale.customer_name,
-                    expression: "vale.customer_name"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Customer Name" },
-                domProps: { value: _vm.vale.customer_name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+            _c("div", { staticClass: "form-row" }, [
+              _c(
+                "div",
+                { staticClass: "col", staticStyle: { display: "none" } },
+                [
+                  _c("label", [_vm._v("Form Status")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.vale.form_status,
+                        expression: "vale.form_status"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", value: "Pending" },
+                    domProps: { value: _vm.vale.form_status },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.vale, "form_status", $event.target.value)
+                      }
                     }
-                    _vm.$set(_vm.vale, "customer_name", $event.target.value)
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col" }, [
+                _c("label", [_vm._v("Receipt Number")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.vale.receipt_number,
+                      expression: "vale.receipt_number"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Receipt Number" },
+                  domProps: { value: _vm.vale.receipt_number },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.vale, "receipt_number", $event.target.value)
+                    }
                   }
-                }
-              })
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col" }, [
+                _c("label", [_vm._v("Customer Name")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.vale.customer_name,
+                      expression: "vale.customer_name"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Customer Name" },
+                  domProps: { value: _vm.vale.customer_name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.vale, "customer_name", $event.target.value)
+                    }
+                  }
+                })
+              ])
             ]),
+            _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
               _c("label", [_vm._v("Date")]),
@@ -93891,30 +93969,58 @@ var render = function() {
             }
           },
           [
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Customer Name")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.vale.customer_name,
-                    expression: "vale.customer_name"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Customer Name" },
-                domProps: { value: _vm.vale.customer_name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+            _c("div", { staticClass: "form-row" }, [
+              _c("div", { staticClass: "col" }, [
+                _c("label", [_vm._v("Form Status")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.vale.form_status,
+                      expression: "vale.form_status"
                     }
-                    _vm.$set(_vm.vale, "customer_name", $event.target.value)
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Form Status" },
+                  domProps: { value: _vm.vale.form_status },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.vale, "form_status", $event.target.value)
+                    }
                   }
-                }
-              })
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col" }, [
+                _c("label", [_vm._v("Customer Name")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.vale.customer_name,
+                      expression: "vale.customer_name"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Customer Name" },
+                  domProps: { value: _vm.vale.customer_name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.vale, "customer_name", $event.target.value)
+                    }
+                  }
+                })
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [

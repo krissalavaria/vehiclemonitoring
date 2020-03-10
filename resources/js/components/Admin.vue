@@ -101,9 +101,14 @@ export default {
             drivers: [],
             vehicles: [],
             totalamount: 0,
-            columns: [{
+            columns: [
+                {
                     label: 'ID',
                     field: 'id',
+                },
+                {
+                    label: 'Status',
+                    field: 'form_status',
                 },
                 {
                     label: 'Customer Name',
