@@ -169,4 +169,28 @@ class ValeController extends Controller
         return redirect()->route('vales.index')
             ->with('success', 'Form deleted successfully.');
     }
+
+    // FILTERS
+    public function getallRequests()
+    {
+      $valesarray = Vale::all()->toArray();
+      return response()->json($valesarray);
+    }
+
+    public function getStatus(Request $request)
+    {
+      $vale = Vale::where('form_status', $request->form_status)->get();
+      return response()->json($vale);
+    }
+
+    public function getRequestbyDate(Request $request)
+    {
+      $vale = Vale::whereMonth('date', $request->date)->get();
+      return response()->json($vale);
+    }
+    public function getRequestbyCustomer(Request $request)
+    {
+      $vale = Vale::where('customer_name', $request->customer_name)->get();
+      return response()->json($vale);
+    }
 }

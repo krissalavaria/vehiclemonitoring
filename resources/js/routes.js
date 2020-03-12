@@ -10,6 +10,7 @@ import EditFuel from './components/EditFuel.vue';
 import Admin from './components/Admin.vue';
 import AddAdmin from './components/AddAdmin.vue';
 import EditAdmin from './components/EditAdmin.vue';
+import Reports from './components/Reports.vue';
 
 export const routes = [
     {
@@ -71,5 +72,10 @@ export const routes = [
         name: 'addAdmin',
         path: '/addAdmin',
         component: AddAdmin
+    },
+    {
+      name: 'reportsmain',
+      path: '/reports.reportsmain',
+      component: Reports
     }
 ];

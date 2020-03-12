@@ -19,38 +19,6 @@ class VehiclesController extends Controller
         return array_reverse($vehicles);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Vehicles  $vehicles
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Vehicles $vehicles)
-    {
-        //
-    }
-
     public function add(Request $request)
     {
         $vehicles = new Vehicles([
@@ -98,14 +66,15 @@ class VehiclesController extends Controller
         return response()->json('Vehicle successfully deleted.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Vehicles  $vehicles
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Vehicles $vehicles)
+    public function getallVehicles()
     {
-        //
+      $vehicles = Vehicles::get();
+      return response()->json($vehicles);
+    }
+
+    public function getVehicle(Request $request)
+    {
+      $vehicles = Vehicles::where('registration_number', $request->registration_number)->get();
+      return response()->json($vehicles);
     }
 }

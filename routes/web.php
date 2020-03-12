@@ -50,3 +50,9 @@ Route::get('{any}', function () {
 Route::get('{any}', function () {
   return view('admin.adminmain');
 })->where('any', '.*')->middleware('is_admin');
+
+Route::get('{any}', function () {
+  return view('reports.reportsmain');
+})->where('any', '.*')->middleware('is_admin');
+
+// FILTER

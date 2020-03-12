@@ -56,4 +56,22 @@ Route::group(['prefix' => 'vale'], function () {
     Route::delete('delete/{id}', 'ValeController@deletearray');
 });
 
+Route::get('reports', 'ValeController@indexarray');
+Route::group(['prefix' => 'vale'], function () {
+    Route::get('edit/{id}', 'ValeController@editarray');
+    Route::post('update/{id}', 'ValeController@updatearray');
+    Route::delete('delete/{id}', 'ValeController@deletearray');
+});
+
+// API REQUESTS TO GET EXPENSES  TOTAL
 Route::get('totalamount', 'ValeController@totalamount');
+
+// FILTER REQUESTS
+// VEHICLES
+Route::get('getallvehicles', 'VehiclesController@getallVehicles');
+Route::get('getvehicle/{registration_number}', 'VehiclesController@getVehicle');
+// REQUEST FORMS
+Route::get('getallrequests', 'ValeController@getallRequests');
+Route::get('getstatus/{form_status}', 'ValeController@getStatus');
+Route::get('requestbydate/{date}', 'ValeController@getRequestbyDate');
+Route::get('getcustomer/{customer_name}', 'ValeController@getRequestbyCustomer');

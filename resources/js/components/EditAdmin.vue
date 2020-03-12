@@ -67,7 +67,6 @@ export default {
             .get(`http://localhost:8000/api/vale/edit/${this.$route.params.id}`)
             .then((response) => {
                 this.vale = response.data;
-                // console.log(response.data);
             });
     },
     methods: {

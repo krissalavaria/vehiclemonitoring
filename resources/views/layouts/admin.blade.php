@@ -32,13 +32,8 @@
         <li class="">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-sticky-note"></span>Reports</a>
             <div class="col-sm-4 dropdown-menu">
-              <a class="dropdown-item" href="#" style="color: black">Per Vehicle Fuel Expenses</a>
+              <a class="dropdown-item" href="/reports.reportsmain" style="color: black">Request Form</a>
               <a class="dropdown-item" href="#" style="color: black">Date to Date Per Vehicle Fuel Expenses Report</a>
-              <a class="dropdown-item" href="#" style="color: black">Date to Date All Vehicle Fuel Expenses Report</a>
-              <a class="dropdown-item" href="#" style="color: black">All Requests Reports</a>
-              <a class="dropdown-item" href="#" style="color: black">Date to Date All Requests Reports</a>
-              <a class="dropdown-item" href="#" style="color: black">Per Customer Reports</a>
-              <a class="dropdown-item" href="#" style="color: black">Date to Date per customer reports</a>
             </div>
         </li>
       </ul>
