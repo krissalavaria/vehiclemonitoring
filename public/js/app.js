@@ -3247,6 +3247,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3284,47 +3299,40 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    filterStatus: function filterStatus(event) {
+    filterCustomer: function filterCustomer(event) {
       var _this2 = this;
+
+      this.customer = event.target.value;
+      this.axios.get('http://localhost:8000/api/getcustomer/' + this.customer).then(function (response) {
+        _this2.vales = response.data;
+      });
+    },
+    filterStatus: function filterStatus(event) {
+      var _this3 = this;
 
       this.status = event.target.value;
 
       if (this.status == 'all') {
         this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
-          _this2.vales = response.data;
+          _this3.vales = response.data;
         });
       } else {
         this.axios.get('http://localhost:8000/api/getstatus/' + this.status).then(function (response) {
-          _this2.vales = response.data;
+          _this3.vales = response.data;
         });
       }
     },
     filterMonth: function filterMonth(event) {
-      var _this3 = this;
+      var _this4 = this;
 
       this.created = event.target.value;
 
       if (this.created == 'all') {
         this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
-          _this3.vales = response.data;
-        });
-      } else {
-        this.axios.get('http://localhost:8000/api/requestbydate/' + this.created).then(function (response) {
-          _this3.vales = response.data;
-        });
-      }
-    },
-    filterCustomer: function filterCustomer(event) {
-      var _this4 = this;
-
-      this.customer = event.target.value;
-
-      if (this.customer = null) {
-        this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
           _this4.vales = response.data;
         });
       } else {
-        this.axios.get('http://localhost:8000/api/getcustomer/' + this.customer).then(function (response) {
+        this.axios.get('http://localhost:8000/api/requestbydate/' + this.created).then(function (response) {
           _this4.vales = response.data;
         });
       }
@@ -95377,13 +95385,13 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c("table", { staticClass: "table table-striped" }, [
+        _c("table", { staticClass: "table table-striped table-responsive" }, [
           _vm._m(3),
           _vm._v(" "),
           _c(
             "tbody",
             _vm._l(_vm.vales, function(v) {
-              return _c("tr", { key: v.id }, [
+              return _c("tr", { key: v.id, staticClass: "text-center" }, [
                 _c("td", [_vm._v(_vm._s(v.id))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(v.form_status))]),
@@ -95402,13 +95410,15 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(v.unit_cost))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.total_amount))]),
+                _c("td", [_vm._v(_vm._s(v.receipt_number))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.receipt_number))])
+                _c("td", [_vm._v(_vm._s(v.total_amount))])
               ])
             }),
             0
-          )
+          ),
+          _vm._v(" "),
+          _vm._m(4)
         ])
       ])
     ])
@@ -95438,7 +95448,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("tr", [
+      _c("tr", { staticClass: "bg-dark text-white text-center" }, [
         _c("td", [_vm._v("ID")]),
         _vm._v(" "),
         _c("td", [_vm._v("Form Status")]),
@@ -95447,9 +95457,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("td", [_vm._v("Date")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Addrress")]),
+        _c("td", [_vm._v("Address")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Plate Number")]),
+        _c("td", [_vm._v("Plate No.")]),
         _vm._v(" "),
         _c("td", [_vm._v("Description")]),
         _vm._v(" "),
@@ -95457,9 +95467,39 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("td", [_vm._v("Unit Cost")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Total Amount")]),
+        _c("td", [_vm._v("Receipt No.")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Receipt Number")])
+        _c("td", [_vm._v("Total Amt.")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { staticClass: "text-center" }, [
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td"),
+        _vm._v(" "),
+        _c("td", [_c("strong", [_vm._v("TOTAL : ")])]),
+        _vm._v(" "),
+        _c("td", [_c("strong", [_vm._v("500")])])
       ])
     ])
   }

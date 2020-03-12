@@ -44,24 +44,24 @@
             </download-excel>
         </div>
         <div class="card-body">
-            <table class="table table-striped">
+            <table class="table table-striped table-responsive">
                 <thead>
-                    <tr>
+                    <tr class="bg-dark text-white text-center">
                         <td>ID</td>
                         <td>Form Status</td>
                         <td>Customer</td>
                         <td>Date</td>
-                        <td>Addrress</td>
-                        <td>Plate Number</td>
+                        <td>Address</td>
+                        <td>Plate No.</td>
                         <td>Description</td>
                         <td>Quanity</td>
                         <td>Unit Cost</td>
-                        <td>Total Amount</td>
-                        <td>Receipt Number</td>
+                        <td>Receipt No.</td>
+                        <td>Total Amt.</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="v in vales" :key="v.id">
+                    <tr class="text-center" v-for="v in vales" :key="v.id">
                         <td>{{v.id}}</td>
                         <td>{{v.form_status}}</td>
                         <td>{{v.customer_name}}</td>
@@ -71,10 +71,25 @@
                         <td>{{v.description}}</td>
                         <td>{{v.quantity}}</td>
                         <td>{{v.unit_cost}}</td>
-                        <td>{{v.total_amount}}</td>
                         <td>{{v.receipt_number}}</td>
+                        <td>{{v.total_amount}}</td>
                     </tr>
                 </tbody>
+                <thead>
+                    <tr class="text-center">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong>TOTAL : </strong></td>
+                        <td><strong>500</strong></td>
+                    </tr>
+                </thead>
             </table>
         </div>
     </div>

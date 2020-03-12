@@ -56,3 +56,12 @@
     float: right;
     padding-right: 8px;
   } 
+
+  .table-fixed thead {
+    width: 97%;
+  }
+  .table-fixed tbody {
+    height: 230px;
+    overflow-y: auto;
+    width: 100%;
+  }
