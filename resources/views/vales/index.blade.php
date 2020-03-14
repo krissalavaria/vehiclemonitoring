@@ -23,6 +23,7 @@
                 <td>Date</td>
                 <td>Address</td>
                 <td>Plate Number</td>
+                <td>Vehicle Description</td>
                 <td>Description</td>
                 <td>Quantity</td>
                 <td>Unit Cost</td>
@@ -48,6 +49,7 @@
                   <td>{{$vale->date}}</td>
                   <td>{{$vale->address}}</td>
                   <td>{{$vale->plate_number}}</td>
+                  <td>{{$vale->vehicle_description}}</td>
                   <td>{{$vale->description}}</td>
                   <td>{{$vale->quantity}}</td>
                   <td>{{$vale->unit_cost}}</td>

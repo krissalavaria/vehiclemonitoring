@@ -31,11 +31,12 @@
           <a href="/fuels.fuelmain"><span class="fa fa-tint"></span> Fuel Rate</a>
         </li>
         <li class="">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-sticky-note"></span>Reports</a>
+          <a href="/reports.reportsmain"><span class="fa fa-sticky-note"></span> Reports</a>
+          <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-sticky-note"></span>Reports</a>
             <div class="col-sm-4 dropdown-menu">
               <a class="dropdown-item" href="/reports.reportsmain" style="color: black">Request Form</a>
               <a class="dropdown-item" href="#" style="color: black">Date to Date Per Vehicle Fuel Expenses Report</a>
-            </div>
+            </div> -->
         </li>
       </ul>
 

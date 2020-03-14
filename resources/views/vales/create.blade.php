@@ -44,6 +44,10 @@
                 <label for="plate_number">Plate Number:</label>
                 <input type="text" class="form-control" name="plate_number" id="plate_number" placeholder="Input Plate Number" />
               </div>
+              <div class="col">
+                <label for="vehicle_description">Vehicle Description:</label>
+                <input type="text" class="form-control" name="vehicle_description" id="vehicle_description" placeholder="Input Vehicle Description" />
+              </div>
           </div><br>
           <div class="form-row">
               <div class="col">
@@ -60,7 +64,7 @@
               </div>
               <div class="col">
                 <label for="quantity">Quantity per Liter(s):</label>
-                <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Input Quantity" value="0" readonly/>
+                <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Input Quantity" value="0" />
               </div>
               <div class="col">
                 <label for="unit_cost">Unit Cost:</label>

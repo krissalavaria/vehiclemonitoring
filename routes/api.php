@@ -75,3 +75,19 @@ Route::get('getallrequests', 'ValeController@getallRequests');
 Route::get('getstatus/{form_status}', 'ValeController@getStatus');
 Route::get('requestbydate/{date}', 'ValeController@getRequestbyDate');
 Route::get('getcustomer/{customer_name}', 'ValeController@getRequestbyCustomer');
+Route::get('reportstotal', 'ValeController@getReportsTotal');
+Route::get('reportsvehicle/{plate_number}', 'ValeController@getVehicleReports');
+
+/** MONTHLY EXPENSES CHART */
+Route::get('january', 'ValeController@JanuaryExpense');
+Route::get('february', 'ValeController@FebruaryExpense');
+Route::get('march', 'ValeController@MarchExpense');
+Route::get('april', 'ValeController@AprilExpense');
+Route::get('may', 'ValeController@MayExpense');
+Route::get('june', 'ValeController@JuneExpense');
+Route::get('july', 'ValeController@JulyExpense');
+Route::get('august', 'ValeController@AugustExpense');
+Route::get('september', 'ValeController@SeptemberExpense');
+Route::get('october', 'ValeController@OctoberExpense');
+Route::get('november', 'ValeController@NovemberExpense');
+Route::get('december', 'ValeController@DecemberExpense');

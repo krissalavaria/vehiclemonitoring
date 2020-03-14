@@ -22,7 +22,13 @@
             @csrf
             <div class="col">
               <label for="receipt_number">Form Status:</label>
-              <input type="text" class="form-control" name="form_status" id="form_status" value={{ $vale->form_status }} />
+              <select class="form-control" name="form_status" id="form_status" >
+                <option value="" disabled>Update Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Not Updated">Not Updated</option>
+              </select>
             </div>
             <div class="col">
               <label for="receipt_number">Receipt Number:</label>
@@ -46,6 +52,10 @@
               <label for="plate_number">Plate Number:</label>
               <input type="text" class="form-control" name="plate_number" id="plate_number" value={{ $vale->plate_number }} />
             </div>
+            <div class="col">
+                <label for="vehicle_description">Vehicle Description:</label>
+                <input type="text" class="form-control" name="vehicle_description" id="vehicle_description" value={{ $vale->vehicle_description }} />
+              </div>
         </div><br>
         <div class="form-row">
             <div class="col">

@@ -2349,6 +2349,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2409,7 +2417,19 @@ __webpack_require__.r(__webpack_exports__);
       json_meta: [[{
         'key': 'charset',
         'value': 'utf-8'
-      }]]
+      }]],
+      jan: null,
+      feb: null,
+      mar: null,
+      apr: null,
+      may: null,
+      jun: null,
+      jul: null,
+      aug: null,
+      sep: null,
+      oct: null,
+      nov: null,
+      dec: null
     };
   },
   created: function created() {
@@ -2426,6 +2446,42 @@ __webpack_require__.r(__webpack_exports__);
     });
     this.axios.get('http://localhost:8000/api/totalamount').then(function (response) {
       _this.totalamount = response.data;
+    });
+    this.axios.get('api/january').then(function (response) {
+      _this.jan = response.data;
+    });
+    this.axios.get('api/february').then(function (response) {
+      _this.feb = response.data;
+    });
+    this.axios.get('api/march').then(function (response) {
+      _this.mar = response.data;
+    });
+    this.axios.get('api/april').then(function (response) {
+      _this.apr = response.data;
+    });
+    this.axios.get('api/may').then(function (response) {
+      _this.may = response.data;
+    });
+    this.axios.get('api/june').then(function (response) {
+      _this.jun = response.data;
+    });
+    this.axios.get('api/july').then(function (response) {
+      _this.jul = response.data;
+    });
+    this.axios.get('api/august').then(function (response) {
+      _this.aug = response.data;
+    });
+    this.axios.get('api/september').then(function (response) {
+      _this.sep = response.data;
+    });
+    this.axios.get('api/october').then(function (response) {
+      _this.oct = response.data;
+    });
+    this.axios.get('api/november').then(function (response) {
+      _this.nov = response.data;
+    });
+    this.axios.get('api/december').then(function (response) {
+      _this.dec = response.data;
     });
   },
   methods: {
@@ -3262,6 +3318,91 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3269,6 +3410,8 @@ __webpack_require__.r(__webpack_exports__);
       status: null,
       created: null,
       customer: null,
+      vehicle: null,
+      index: [],
       json_fields: {
         'ID': 'id',
         'Form Status': 'form_status',
@@ -3288,7 +3431,9 @@ __webpack_require__.r(__webpack_exports__);
       json_meta: [[{
         'key': 'charset',
         'value': 'utf-8'
-      }]]
+      }]],
+      showTable: 'expenses',
+      reports: ''
     };
   },
   created: function created() {
@@ -3303,9 +3448,16 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       this.customer = event.target.value;
-      this.axios.get('http://localhost:8000/api/getcustomer/' + this.customer).then(function (response) {
-        _this2.vales = response.data;
-      });
+
+      if (this.customer == '') {
+        this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
+          _this2.vales = response.data;
+        });
+      } else {
+        this.axios.get('http://localhost:8000/api/getcustomer/' + this.customer).then(function (response) {
+          _this2.vales = response.data;
+        });
+      }
     },
     filterStatus: function filterStatus(event) {
       var _this3 = this;
@@ -3336,6 +3488,28 @@ __webpack_require__.r(__webpack_exports__);
           _this4.vales = response.data;
         });
       }
+    },
+    filterVehicleExp: function filterVehicleExp(event) {
+      var _this5 = this;
+
+      this.vehicle = event.target.value;
+
+      if (this.vehicle == '') {
+        this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
+          _this5.vales = response.data;
+        });
+      } else {
+        this.axios.get('http://localhost:8000/api/reportsvehicle/' + this.vehicle).then(function (response) {
+          _this5.vales = response.data;
+        });
+      }
+    }
+  },
+  computed: {
+    totalAmount: function totalAmount() {
+      return this.vales.reduce(function (total, item) {
+        return total + item.total_amount;
+      }, 0);
     }
   }
 });
@@ -93619,12 +93793,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "container col-sm-12" }, [
       _c("h2", [_vm._v("Admin Dashboard")]),
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "Welcome to the admin dashboard. This is where you can view and process transactions and data in your\n            system."
         )
       ]),
       _vm._v(" "),
@@ -93688,9 +93862,7 @@ var render = function() {
           { staticClass: "card border-0 col-md-4 bg-transparent mt-4" },
           [
             _c("div", { staticClass: "card-header border bg-transparent" }, [
-              _vm._v(
-                "\r\n                    Business Chart\r\n                "
-              )
+              _vm._v("\n                    BUSINESS CHART\n                ")
             ]),
             _vm._v(" "),
             _c(
@@ -93716,7 +93888,7 @@ var render = function() {
           { staticClass: "card border-0 col-md-8 bg-transparent mt-4" },
           [
             _c("div", { staticClass: "card-header border bg-transparent" }, [
-              _vm._v("\r\n                    Line Chart\r\n                ")
+              _vm._v("\n                    Line Chart\n                ")
             ]),
             _vm._v(" "),
             _c(
@@ -93726,8 +93898,10 @@ var render = function() {
                 _c("area-chart", {
                   attrs: {
                     data: {
-                      "2017-01-01 00:00:00 -0800": 2,
-                      "2017-01-01 00:01:00 -0800": 5
+                      "2017-01-01": 2,
+                      "2017-03-01": 5,
+                      "2017-02-01": 9,
+                      "2017-04-01": 7
                     }
                   }
                 })
@@ -93740,7 +93914,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "card bg-transparent mt-4" }, [
         _c("div", { staticClass: "card-header border bg-transparent" }, [
-          _vm._v("\r\n                Bar Chart\r\n            ")
+          _vm._v("\n                YEAR WISE MONTHLY EXPENSES\n            ")
         ]),
         _vm._v(" "),
         _c(
@@ -93750,12 +93924,18 @@ var render = function() {
             _c("column-chart", {
               attrs: {
                 data: [
-                  ["Jan", 32],
-                  ["Feb", 46],
-                  ["Mar", 28],
-                  ["Apr", 37],
-                  ["May", 22],
-                  ["Jun", 56]
+                  ["Jan", _vm.jan],
+                  ["Feb", _vm.feb],
+                  ["Mar", _vm.mar],
+                  ["Apr", _vm.apr],
+                  ["May", _vm.may],
+                  ["Jun", _vm.jun],
+                  ["Jul", _vm.jul],
+                  ["Aug", _vm.aug],
+                  ["Sep", _vm.sep],
+                  ["Oct", _vm.oct],
+                  ["Nov", _vm.nov],
+                  ["Dec", _vm.dec]
                 ]
               }
             })
@@ -93777,7 +93957,7 @@ var render = function() {
               },
               [
                 _c("span", { staticClass: "fa fa-sticky-note pr-2" }),
-                _vm._v(" Add Form")
+                _vm._v(" Add Form\n                ")
               ]
             ),
             _vm._v(" "),
@@ -95191,240 +95371,528 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col mb-4" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.status,
-                expression: "status"
-              }
-            ],
-            staticClass: "form-control form-control-sm",
-            on: {
-              change: [
-                function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.status = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
-                },
-                function($event) {
-                  return _vm.filterStatus($event)
-                }
-              ]
-            }
-          },
-          [
-            _c("option", { attrs: { value: "", disabled: "" } }, [
-              _vm._v("Select Plate Number")
+    _c("div", { staticClass: "row mb-3" }, [
+      _c("div", { staticClass: "card col-md-6 border-0 bg-transparent" }, [
+        _c("div", { staticClass: "card-body border" }, [
+          _c("div", { staticClass: "content-wrapper" }, [
+            _c("div", { staticClass: "d-flex bd-hightlight mb-3" }, [
+              _c("h2", { staticClass: "p-2 bd-hightlight" }, [
+                _vm._v(_vm._s(_vm.vales.length))
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
             ]),
             _vm._v(" "),
-            _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+            _c("hr", { staticClass: "solid" }),
             _vm._v(" "),
-            _c("option", { attrs: { value: "Approved" } }, [
-              _vm._v("Approved")
-            ]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "Rejected" } }, [
-              _vm._v("Rejected")
-            ]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "Pending" } }, [_vm._v("Pending")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "Not Updated" } }, [
-              _vm._v("Not Updated")
-            ])
-          ]
-        )
+            _c("p", [_vm._v("TOTAL NUMBERS OF REQUESTS")])
+          ])
+        ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col mb-4" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c(
-          "select",
-          {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.created,
-                expression: "created"
-              }
-            ],
-            staticClass: "form-control form-control-sm",
-            on: {
-              change: [
-                function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.created = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
-                },
-                function($event) {
-                  return _vm.filterMonth($event)
-                }
-              ]
-            }
-          },
-          [
-            _c("option", { attrs: { value: "", disabled: "" } }, [
-              _vm._v("Select Month")
+      _c("div", { staticClass: "card col-md-6 border-0 bg-transparent" }, [
+        _c("div", { staticClass: "card-body border" }, [
+          _c("div", { staticClass: "content-wrapper" }, [
+            _c("div", { staticClass: "d-flex bd-hightlight mb-3" }, [
+              _c("h2", { staticClass: "p-2 bd-hightlight" }, [
+                _vm._v(_vm._s(_vm.totalAmount))
+              ]),
+              _vm._v(" "),
+              _vm._m(1)
             ]),
             _vm._v(" "),
-            _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+            _c("hr", { staticClass: "solid" }),
             _vm._v(" "),
-            _c("option", { attrs: { value: "1" } }, [_vm._v("January")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "2" } }, [_vm._v("February")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "3" } }, [_vm._v("March")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "4" } }, [_vm._v("April")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "5" } }, [_vm._v("May")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "6" } }, [_vm._v("June")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "7" } }, [_vm._v("July")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "8" } }, [_vm._v("August")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "9" } }, [_vm._v("September")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "10" } }, [_vm._v("October")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "11" } }, [_vm._v("November")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "12" } }, [_vm._v("December")])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col mb-4" }, [
-        _vm._m(2),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.customer,
-              expression: "customer"
-            }
-          ],
-          staticClass: "form-control form-control-sm",
-          attrs: { type: "text", placeholder: "Enter customer name" },
-          domProps: { value: _vm.customer },
-          on: {
-            keyup: function($event) {
-              if (
-                !$event.type.indexOf("key") &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
-              }
-              return _vm.filterCustomer($event)
-            },
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.customer = $event.target.value
-            }
-          }
-        })
+            _c("p", [_vm._v("TOTAL NUMBER OF EXPENSES FOR THIS MONTH")])
+          ])
+        ])
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "card" }, [
-      _c(
-        "div",
-        { staticClass: "card-header col-md-12 d-flex" },
-        [
-          _vm._v("\r\n            LIST OF ALL REQUESTS\r\n            "),
-          _c(
-            "download-excel",
-            {
-              staticClass: "btn btn-sm btn-primary ml-auto",
-              attrs: {
-                data: _vm.vales,
-                fields: _vm.json_fields,
-                worksheet: "My Worksheet",
-                name: "filename.xls"
+    _c("div", { staticClass: "row mb-3" }, [
+      _c("div", { staticClass: "col mb-4" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.reports,
+                expression: "reports"
               }
-            },
-            [
-              _c("span", { staticClass: "fa fa-download" }),
-              _vm._v(" Export Data\r\n            ")
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("table", { staticClass: "table table-striped table-responsive" }, [
-          _vm._m(3),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.vales, function(v) {
-              return _c("tr", { key: v.id, staticClass: "text-center" }, [
-                _c("td", [_vm._v(_vm._s(v.id))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.form_status))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.customer_name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.date))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.address))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.plate_number))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.description))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.quantity))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.unit_cost))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.receipt_number))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(v.total_amount))])
-              ])
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _vm._m(4)
-        ])
+            ],
+            staticClass: "form-control form-control-sm",
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.reports = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          [
+            _c("option", { attrs: { value: "", selected: "", disabled: "" } }, [
+              _vm._v("Select Reports to generate")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "expenses" } }, [
+              _vm._v("Expenses")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "requests" } }, [_vm._v("Requests")])
+          ]
+        )
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _vm.reports == ""
+      ? _c(
+          "div",
+          {
+            staticClass: "alert alert-warning text-center",
+            attrs: { role: "alert" }
+          },
+          [_vm._v("No Records to show. Please Select a Reports to Generate.")]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.reports == "requests"
+      ? _c("div", [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col mb-4" }, [
+              _vm._m(3),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.status,
+                      expression: "status"
+                    }
+                  ],
+                  staticClass: "form-control form-control-sm",
+                  on: {
+                    change: [
+                      function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.status = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      },
+                      function($event) {
+                        return _vm.filterStatus($event)
+                      }
+                    ]
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "", disabled: "" } }, [
+                    _vm._v("Select Plate Number")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Approved" } }, [
+                    _vm._v("Approved")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Rejected" } }, [
+                    _vm._v("Rejected")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Pending" } }, [
+                    _vm._v("Pending")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Not Updated" } }, [
+                    _vm._v("Not Updated")
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col mb-4" }, [
+              _vm._m(4),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.created,
+                      expression: "created"
+                    }
+                  ],
+                  staticClass: "form-control form-control-sm",
+                  on: {
+                    change: [
+                      function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.created = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      },
+                      function($event) {
+                        return _vm.filterMonth($event)
+                      }
+                    ]
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "", disabled: "" } }, [
+                    _vm._v("Select Month")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "1" } }, [_vm._v("January")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "2" } }, [_vm._v("February")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "3" } }, [_vm._v("March")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "4" } }, [_vm._v("April")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "5" } }, [_vm._v("May")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "6" } }, [_vm._v("June")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "7" } }, [_vm._v("July")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "8" } }, [_vm._v("August")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "9" } }, [
+                    _vm._v("September")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "10" } }, [_vm._v("October")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "11" } }, [
+                    _vm._v("November")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "12" } }, [_vm._v("December")])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col mb-4" }, [
+              _vm._m(5),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.customer,
+                    expression: "customer"
+                  }
+                ],
+                staticClass: "form-control form-control-sm",
+                attrs: { type: "text", placeholder: "Enter customer name" },
+                domProps: { value: _vm.customer },
+                on: {
+                  change: function($event) {
+                    return _vm.filterCustomer($event)
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.customer = $event.target.value
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card" }, [
+            _c(
+              "div",
+              { staticClass: "card-header col-md-12 d-flex" },
+              [
+                _vm._v(
+                  "\n                LIST OF ALL REQUESTS\n                "
+                ),
+                _c(
+                  "download-excel",
+                  {
+                    staticClass: "btn btn-sm btn-primary ml-auto",
+                    attrs: {
+                      data: _vm.vales,
+                      fields: _vm.json_fields,
+                      worksheet: "My Worksheet",
+                      name: "filename.xls"
+                    }
+                  },
+                  [
+                    _c("span", { staticClass: "fa fa-download" }),
+                    _vm._v(" Export Data\n                ")
+                  ]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("table", { staticClass: "table table-striped" }, [
+                _vm._m(6),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.vales, function(v) {
+                    return _c("tr", { key: v.id }, [
+                      _c("td", [_vm._v(_vm._s(v.id))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.form_status))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.customer_name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.date))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.address))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.plate_number))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.vehicle_description))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.description))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.quantity))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.unit_cost))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.receipt_number))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.total_amount))])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ])
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.reports == "expenses"
+      ? _c("div", [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col mb-4" }, [
+              _vm._m(7),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.created,
+                      expression: "created"
+                    }
+                  ],
+                  staticClass: "form-control form-control-sm",
+                  on: {
+                    change: [
+                      function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.created = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      },
+                      function($event) {
+                        return _vm.filterMonth($event)
+                      }
+                    ]
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "", disabled: "" } }, [
+                    _vm._v("Select Month")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "1" } }, [_vm._v("January")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "2" } }, [_vm._v("February")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "3" } }, [_vm._v("March")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "4" } }, [_vm._v("April")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "5" } }, [_vm._v("May")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "6" } }, [_vm._v("June")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "7" } }, [_vm._v("July")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "8" } }, [_vm._v("August")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "9" } }, [
+                    _vm._v("September")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "10" } }, [_vm._v("October")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "11" } }, [
+                    _vm._v("November")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "12" } }, [_vm._v("December")])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col mb-4" }, [
+              _vm._m(8),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.vehicle,
+                    expression: "vehicle"
+                  }
+                ],
+                staticClass: "form-control form-control-sm",
+                attrs: { type: "text", placeholder: "Enter plate number" },
+                domProps: { value: _vm.vehicle },
+                on: {
+                  change: function($event) {
+                    return _vm.filterVehicleExp($event)
+                  },
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.vehicle = $event.target.value
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card" }, [
+            _c(
+              "div",
+              { staticClass: "card-header col-md-12 d-flex" },
+              [
+                _vm._v(
+                  "\n                LIST OF VEHICLE EXPENSES\n                "
+                ),
+                _c(
+                  "download-excel",
+                  {
+                    staticClass: "btn btn-sm btn-primary ml-auto",
+                    attrs: {
+                      data: _vm.vales,
+                      fields: _vm.json_fields,
+                      worksheet: "My Worksheet",
+                      name: "filename.xls"
+                    }
+                  },
+                  [
+                    _c("span", { staticClass: "fa fa-download" }),
+                    _vm._v(" Export Data\n                ")
+                  ]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("table", { staticClass: "table table-striped" }, [
+                _vm._m(9),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.vales, function(v) {
+                    return _c("tr", { key: v.id }, [
+                      _c("td", [_vm._v(_vm._s(v.id))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.plate_number))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.vehicle_description))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.quantity))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.unit_cost))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(v.total_amount))])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ])
+          ])
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", { staticClass: "ml-auto p-2 bd-hightlight text-primary" }, [
+      _c("span", { staticClass: "fa fa-sticky-note" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", { staticClass: "ml-auto p-2 bd-hightlight text-success" }, [
+      _c("span", { staticClass: "fa fa-credit-card" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("strong", [_vm._v("GENERATE REPORTS")])])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -95448,7 +95916,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("tr", { staticClass: "bg-dark text-white text-center" }, [
+      _c("tr", { staticClass: "bg-dark text-white" }, [
         _c("td", [_vm._v("ID")]),
         _vm._v(" "),
         _c("td", [_vm._v("Form Status")]),
@@ -95460,6 +95928,8 @@ var staticRenderFns = [
         _c("td", [_vm._v("Address")]),
         _vm._v(" "),
         _c("td", [_vm._v("Plate No.")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Vehicle Description")]),
         _vm._v(" "),
         _c("td", [_vm._v("Description")]),
         _vm._v(" "),
@@ -95477,29 +95947,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("label", [_c("strong", [_vm._v("FILTER EXPENSES PER MONTH")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("strong", [_vm._v("FILTER EXPENSES PER VEHICLE")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("tr", { staticClass: "text-center" }, [
-        _c("td"),
+      _c("tr", { staticClass: "bg-dark text-white" }, [
+        _c("td", [_vm._v("ID")]),
         _vm._v(" "),
-        _c("td"),
+        _c("td", [_vm._v("Plate Number")]),
         _vm._v(" "),
-        _c("td"),
+        _c("td", [_vm._v("Description")]),
         _vm._v(" "),
-        _c("td"),
+        _c("td", [_vm._v("Quantity")]),
         _vm._v(" "),
-        _c("td"),
+        _c("td", [_vm._v("Unit Cost")]),
         _vm._v(" "),
-        _c("td"),
-        _vm._v(" "),
-        _c("td"),
-        _vm._v(" "),
-        _c("td"),
-        _vm._v(" "),
-        _c("td"),
-        _vm._v(" "),
-        _c("td", [_c("strong", [_vm._v("TOTAL : ")])]),
-        _vm._v(" "),
-        _c("td", [_c("strong", [_vm._v("500")])])
+        _c("td", [_vm._v("Total Amount")])
       ])
     ])
   }
