@@ -19,11 +19,14 @@ import JsonExcel from 'vue-json-excel';
 import downloadexcel from 'vue-json-excel';
 import Chartkick from 'vue-chartkick';
 import Chart from 'chart.js';
+import Vuelidate from 'vuelidate';
+import { required, minLength, between } from 'vuelidate/lib/validators';
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(VueGoodTablePlugin);
 Vue.use(Chartkick.use(Chart));
+Vue.use(Vuelidate);
 
 /**
  * The following block of code may be used to automatically register your

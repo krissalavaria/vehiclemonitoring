@@ -7,7 +7,7 @@
         <div class="card-body">
             <form @submit.prevent="addAdmin">
                 <div class="form-row">
-                    <div class="col" style="display: none;">
+                    <div class="col">
                         <label>Form Status</label>
                         <input type="text" class="form-control" value="Pending" v-model="vale.form_status">
                     </div>
@@ -28,9 +28,15 @@
                     <label>Address</label>
                     <input type="text" class="form-control" placeholder="Address" v-model="vale.address">
                 </div>
-                <div class="form-group">
-                    <label>Plate Number</label>
-                    <input type="text" class="form-control" placeholder="Plate Number" v-model="vale.plate_number">
+                <div class="form-row">
+                    <div class="col">
+                        <label>Plate Number</label>
+                        <input type="text" class="form-control" placeholder="Plate Number" v-model="vale.plate_number">
+                    </div>
+                    <div class="col">
+                        <label>Vehicle Description</label>
+                        <input type="text" class="form-control" placeholder="Vehicle Description" v-model="vale.vehicle_description">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Description</label>

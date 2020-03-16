@@ -34,7 +34,11 @@
     export default {
         data() {
             return {
-                vehicle: {}
+                vehicle: {},
+                registration_number: '',
+                model_number: '',
+                plate_number: '',
+                vehicle_type: '',
             }
         },
         methods: {
@@ -49,6 +53,6 @@
                     .catch(error => console.log(error))
                     .finally(() => this.loading = false)
             }
-        }
+        },
     }
 </script>

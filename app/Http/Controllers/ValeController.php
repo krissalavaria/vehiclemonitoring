@@ -173,11 +173,11 @@ class ValeController extends Controller
             'plate_number' => 'required',
             'description' => 'required',
             'quantity' => 'required',
-            'quantity' => 'required',
             'unit_cost' => 'required',
             'total_amount' => 'required',
             'receipt_number' => 'required',
-            'form_status' => 'required'
+            'form_status' => 'required',
+            'vehicle_description' => 'required',
         ]);
 
         $vale->update($request->all());
