@@ -22,6 +22,7 @@ import Chart from 'chart.js';
 import Vuelidate from 'vuelidate';
 
 
+
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(VueGoodTablePlugin);
@@ -42,6 +43,7 @@ Vue.use(Vuelidate);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('downloadExcel', JsonExcel);
 Vue.component('downloadexcel', downloadexcel);
+Vue.component('pagination', require('laravel-vue-pagination'));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
