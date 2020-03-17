@@ -20,7 +20,7 @@ import downloadexcel from 'vue-json-excel';
 import Chartkick from 'vue-chartkick';
 import Chart from 'chart.js';
 import Vuelidate from 'vuelidate';
-import { required, minLength, between } from 'vuelidate/lib/validators';
+
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);

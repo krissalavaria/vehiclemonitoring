@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="549f1739-23c1-4b64-b151-e728b55edaf1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ValeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ValeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/AddAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AddAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AddDriver.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AddDriver.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AddFuel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AddFuel.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/AddVehicle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AddVehicle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vales/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vales/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +152,9 @@
       <workItem from="1582852112806" duration="469000" />
       <workItem from="1584084577392" duration="7530000" />
       <workItem from="1584147146538" duration="13401000" />
-      <workItem from="1584348765358" duration="3249000" />
+      <workItem from="1584348765358" duration="5958000" />
+      <workItem from="1584402459923" duration="8733000" />
+      <workItem from="1584417016723" duration="1822000" />
     </task>
     <servers />
   </component>
@@ -171,10 +170,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="17" y="46" width="1410" height="757" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1584086202503" />
-    <state x="470" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1584350579339">
+    <state x="470" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1584417021441">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="470" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584350579339" />
+    <state x="470" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584417021441" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1584151197609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

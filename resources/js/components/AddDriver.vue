@@ -8,27 +8,27 @@
                 <form @submit.prevent="addDriver">
                     <div class="form-group">
                         <label>Driver Name</label>
-                        <input type="text" class="form-control" placeholder="Driver Registration No." v-model="driver.driver_name">
+                        <input type="text" class="form-control" placeholder="Driver Registration No." v-model="driver.driver_name" required>
                     </div>
                     <div class="form-group">
                         <label>Contact Number</label>
-                        <input type="text" class="form-control" placeholder="Contact No." v-model="driver.contact_number">
+                        <input type="text" class="form-control" placeholder="Contact No." v-model="driver.contact_number" required>
                     </div>
                     <div class="form-group">
                         <label>License Number</label>
-                        <input type="text" class="form-control" placeholder="License No." v-model="driver.license_number">
+                        <input type="text" class="form-control" placeholder="License No." v-model="driver.license_number" required>
                     </div>
                     <div class="form-group">
                         <label>License Expiration</label>
-                        <input type="date" class="form-control" placeholder="License Exp. Date" v-model="driver.license_expiration">
+                        <input type="date" class="form-control" placeholder="License Exp. Date" v-model="driver.license_expiration" required>
                     </div>
                     <div class="form-group">
                         <label>Driver Address</label>
-                        <input type="text" class="form-control" placeholder="Driver Address" v-model="driver.driver_address">
+                        <input type="text" class="form-control" placeholder="Driver Address" v-model="driver.driver_address" required>
                     </div>
                     <div class="form-group">
                         <label>Status</label>
-                        <input type="text" class="form-control" placeholder="Status" v-model="driver.driver_status">
+                        <input type="text" class="form-control" placeholder="Status" v-model="driver.driver_status" required>
                     </div>
                     <button type="submit" class="btn btn-primary col-sm-2">Add Driver</button>
                     <router-link class="btn btn-danger col-sm-2" to="/drivers.drivermain">Back</router-link>

@@ -8,19 +8,23 @@
                 <form @submit.prevent="addVehicle">
                     <div class="form-group">
                         <label>Registration Number</label>
-                        <input type="text" class="form-control" placeholder="Vehicle Registration No." v-model="vehicle.registration_number">
+                        <input type="text" class="form__input form-control" placeholder="Vehicle Registration No."
+                               v-model="vehicle.registration_number" required>
                     </div>
                     <div class="form-group">
                         <label>Model Number</label>
-                        <input type="text" class="form-control" placeholder="Vehicle Model No." v-model="vehicle.model_number">
+                        <input type="text" class="form-control" placeholder="Vehicle Model No."
+                               v-model="vehicle.model_number" required>
                     </div>
                     <div class="form-group">
                         <label>Plate Number</label>
-                        <input type="text" class="form-control" placeholder="Vehicle Plate No." v-model="vehicle.plate_number">
+                        <input type="text" class="form-control" placeholder="Vehicle Plate No."
+                               v-model="vehicle.plate_number" required>
                     </div>
                     <div class="form-group">
                         <label>Vehicle Type</label>
-                        <input type="text" class="form-control" placeholder="Vehicle Type" v-model="vehicle.vehicle_type">
+                        <input type="text" class="form-control" placeholder="Vehicle Type"
+                               v-model="vehicle.vehicle_type" required>
                     </div>
                     <button type="submit" class="btn btn-primary col-sm-2">Add Vehicle</button>
                     <router-link class="btn btn-danger col-sm-2" to="/vehicles.vehiclemain">Back</router-link>
@@ -31,6 +35,7 @@
 </template>
 
 <script>
+    import { required, minLength } from 'vuelidate/lib/validators';
     export default {
         data() {
             return {
@@ -54,5 +59,10 @@
                     .finally(() => this.loading = false)
             }
         },
+        validations: {
+            registration_number: {
+                required,
+            },
+        }
     }
 </script>

@@ -9,7 +9,7 @@
                     <div class="form-group">
                         <label>Vehicle Registration No.</label>
                         <!-- <input type="text" class="form-control" placeholder="Registration Number" v-model="fuel.vehicle_registration_number"> -->
-                        <select class="form-control" v-model="fuel.vehicle_registration_number">
+                        <select class="form-control" v-model="fuel.vehicle_registration_number" required>
                             <option>Select Registration Number</option>
                             <option v-for="vehicle in vehicles" :key="vehicle.registration_number" >
                                 {{ vehicle.registration_number }}
@@ -18,20 +18,20 @@
                     </div>
                     <div class="form-group">
                         <label>Date</label>
-                        <input type="date" class="form-control" placeholder="Date" v-model="fuel.date">
+                        <input type="date" class="form-control" placeholder="Date" v-model="fuel.date" required>
                     </div>
                     <div class="form-group">
                         <label>Odometer</label>
-                        <input type="text" class="form-control" placeholder="Odometer" v-model="fuel.odometer">
+                        <input type="text" class="form-control" placeholder="Odometer" v-model="fuel.odometer" required>
                     </div>
                     <div class="form-group">
                         <label>Fuel Type</label>
-                        <input type="text" class="form-control" placeholder="Fuel Type" v-model="fuel.fuel_type">
+                        <input type="text" class="form-control" placeholder="Fuel Type" v-model="fuel.fuel_type" required>
                     </div>
                     <div class="form-group">
                         <label>Reference</label>
                         <!-- <input type="text" class="form-control" placeholder="Reference Number" v-model="fuel.reference_number"> -->
-                        <select class="form-control" v-model="fuel.reference_number">
+                        <select class="form-control" v-model="fuel.reference_number" required>
                             <option>Select Reference ID</option>
                             <option v-for="vale in vales" :key="vale.id" >
                                 {{ vale.id }}

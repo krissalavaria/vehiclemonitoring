@@ -2193,6 +2193,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2225,6 +2227,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2249,6 +2256,11 @@ __webpack_require__.r(__webpack_exports__);
       })["finally"](function () {
         return _this.loading = false;
       });
+    }
+  },
+  validations: {
+    registration_number: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
     }
   }
 });
@@ -93216,7 +93228,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Driver Registration No." },
+                attrs: {
+                  type: "text",
+                  placeholder: "Driver Registration No.",
+                  required: ""
+                },
                 domProps: { value: _vm.driver.driver_name },
                 on: {
                   input: function($event) {
@@ -93242,7 +93258,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Contact No." },
+                attrs: {
+                  type: "text",
+                  placeholder: "Contact No.",
+                  required: ""
+                },
                 domProps: { value: _vm.driver.contact_number },
                 on: {
                   input: function($event) {
@@ -93268,7 +93288,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "License No." },
+                attrs: {
+                  type: "text",
+                  placeholder: "License No.",
+                  required: ""
+                },
                 domProps: { value: _vm.driver.license_number },
                 on: {
                   input: function($event) {
@@ -93294,7 +93318,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "date", placeholder: "License Exp. Date" },
+                attrs: {
+                  type: "date",
+                  placeholder: "License Exp. Date",
+                  required: ""
+                },
                 domProps: { value: _vm.driver.license_expiration },
                 on: {
                   input: function($event) {
@@ -93324,7 +93352,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Driver Address" },
+                attrs: {
+                  type: "text",
+                  placeholder: "Driver Address",
+                  required: ""
+                },
                 domProps: { value: _vm.driver.driver_address },
                 on: {
                   input: function($event) {
@@ -93350,7 +93382,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Status" },
+                attrs: { type: "text", placeholder: "Status", required: "" },
                 domProps: { value: _vm.driver.driver_status },
                 on: {
                   input: function($event) {
@@ -93442,6 +93474,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
+                  attrs: { required: "" },
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -93492,7 +93525,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "date", placeholder: "Date" },
+                attrs: { type: "date", placeholder: "Date", required: "" },
                 domProps: { value: _vm.fuel.date },
                 on: {
                   input: function($event) {
@@ -93518,7 +93551,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Odometer" },
+                attrs: { type: "text", placeholder: "Odometer", required: "" },
                 domProps: { value: _vm.fuel.odometer },
                 on: {
                   input: function($event) {
@@ -93544,7 +93577,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Fuel Type" },
+                attrs: { type: "text", placeholder: "Fuel Type", required: "" },
                 domProps: { value: _vm.fuel.fuel_type },
                 on: {
                   input: function($event) {
@@ -93572,6 +93605,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
+                  attrs: { required: "" },
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -93685,10 +93719,11 @@ var render = function() {
                     expression: "vehicle.registration_number"
                   }
                 ],
-                staticClass: "form-control",
+                staticClass: "form__input form-control",
                 attrs: {
                   type: "text",
-                  placeholder: "Vehicle Registration No."
+                  placeholder: "Vehicle Registration No.",
+                  required: ""
                 },
                 domProps: { value: _vm.vehicle.registration_number },
                 on: {
@@ -93719,7 +93754,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Vehicle Model No." },
+                attrs: {
+                  type: "text",
+                  placeholder: "Vehicle Model No.",
+                  required: ""
+                },
                 domProps: { value: _vm.vehicle.model_number },
                 on: {
                   input: function($event) {
@@ -93745,7 +93784,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Vehicle Plate No." },
+                attrs: {
+                  type: "text",
+                  placeholder: "Vehicle Plate No.",
+                  required: ""
+                },
                 domProps: { value: _vm.vehicle.plate_number },
                 on: {
                   input: function($event) {
@@ -93771,7 +93814,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Vehicle Type" },
+                attrs: {
+                  type: "text",
+                  placeholder: "Vehicle Type",
+                  required: ""
+                },
                 domProps: { value: _vm.vehicle.vehicle_type },
                 on: {
                   input: function($event) {
@@ -113147,8 +113194,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuelidate */ "./node_modules/vuelidate/lib/index.js");
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(vuelidate__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
-/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -113157,7 +113202,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-
 
 
 
