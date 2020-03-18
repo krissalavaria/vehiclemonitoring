@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="549f1739-23c1-4b64-b151-e728b55edaf1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ValeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ValeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Admin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Admin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +153,7 @@
       <workItem from="1584402459923" duration="8733000" />
       <workItem from="1584417016723" duration="13484000" />
       <workItem from="1584486788357" duration="4392000" />
-      <workItem from="1584516287081" duration="5083000" />
+      <workItem from="1584516287081" duration="6292000" />
     </task>
     <servers />
   </component>

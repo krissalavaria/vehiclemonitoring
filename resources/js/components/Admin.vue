@@ -59,7 +59,7 @@
                     </div>
                     <div class="card-body border">
                         <area-chart
-                            :data="{'Jan': jareq, 'Feb': febreq, 'Mar': marreq, 'Apr': aprreq, 'May': mayreq, 'Jun': junreq,
+                            :data="{'Jan': janreq, 'Feb': febreq, 'Mar': marreq, 'Apr': aprreq, 'May': mayreq, 'Jun': junreq,
                             'Jul': julreq, 'Aug': augreq, 'Sep': sepreq, 'Oct': octreq, 'Nov': novreq, 'Dec': decreq}"></area-chart>
                     </div>
                 </div>
@@ -193,22 +193,22 @@
         },
         created() {
             this.axios
-                .get('http://localhost:8000/api/vales')
+                .get('api/vales')
                 .then(response => {
                     this.vales = response.data;
                 });
             this.axios
-                .get('http://localhost:8000/api/vehicles')
+                .get('api/vehicles')
                 .then(response => {
                     this.vehicles = response.data;
                 });
             this.axios
-                .get('http://localhost:8000/api/drivers')
+                .get('api/drivers')
                 .then(response => {
                     this.drivers = response.data;
                 });
             this.axios
-                .get('http://localhost:8000/api/totalamount')
+                .get('api/totalamount')
                 .then(response => {
                     this.totalamount = response.data;
                 });

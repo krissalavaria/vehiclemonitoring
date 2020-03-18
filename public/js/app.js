@@ -2475,16 +2475,16 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get('http://localhost:8000/api/vales').then(function (response) {
+    this.axios.get('api/vales').then(function (response) {
       _this.vales = response.data;
     });
-    this.axios.get('http://localhost:8000/api/vehicles').then(function (response) {
+    this.axios.get('api/vehicles').then(function (response) {
       _this.vehicles = response.data;
     });
-    this.axios.get('http://localhost:8000/api/drivers').then(function (response) {
+    this.axios.get('api/drivers').then(function (response) {
       _this.drivers = response.data;
     });
-    this.axios.get('http://localhost:8000/api/totalamount').then(function (response) {
+    this.axios.get('api/totalamount').then(function (response) {
       _this.totalamount = response.data;
     });
     /** MONTHLY EXPENSES MONTHLY EXPENSES *MONTHLY EXPENSES *MONTHLY EXPENSES **/
@@ -94652,7 +94652,7 @@ var render = function() {
                 _c("area-chart", {
                   attrs: {
                     data: {
-                      Jan: _vm.jareq,
+                      Jan: _vm.janreq,
                       Feb: _vm.febreq,
                       Mar: _vm.marreq,
                       Apr: _vm.aprreq,
