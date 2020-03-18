@@ -260,6 +260,78 @@ class ValeController extends Controller
         return response()->json($vehicles);
     }
 
+    public function JanRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('1'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function FebRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('2'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function MarRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('3'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function AprRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('4'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function MayRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('5'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function JunRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('6'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function JulRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('7'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function AugRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('8'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function SepRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('9'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function OctRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('10'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function NovRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('11'))->count();
+        return response()->json($janrequest);
+    }
+
+    public function DecRequests(Request $request)
+    {
+        $janrequest = Vale::whereYear('created_at', date('Y'))->whereMonth('date', date('12'))->count();
+        return response()->json($janrequest);
+    }
+
     /**
      * GET MONTHLY SUM OF REQUESTS
      * CHARTS

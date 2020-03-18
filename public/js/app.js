@@ -2379,6 +2379,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2386,6 +2387,7 @@ __webpack_require__.r(__webpack_exports__);
       drivers: [],
       vehicles: [],
       totalamount: 0,
+      monthlyrequest: 0,
       columns: [{
         label: 'ID',
         field: 'id'
@@ -2440,6 +2442,8 @@ __webpack_require__.r(__webpack_exports__);
         'key': 'charset',
         'value': 'utf-8'
       }]],
+
+      /** MONTHLY EXPENSES */
       jan: null,
       feb: null,
       mar: null,
@@ -2451,7 +2455,21 @@ __webpack_require__.r(__webpack_exports__);
       sep: null,
       oct: null,
       nov: null,
-      dec: null
+      dec: null,
+
+      /** MONTHLY REQUESTS */
+      janreq: null,
+      febreq: null,
+      marreq: null,
+      aprreq: null,
+      mayreq: null,
+      junreq: null,
+      julreq: null,
+      augreq: null,
+      sepreq: null,
+      octreq: null,
+      novreq: null,
+      decreq: null
     };
   },
   created: function created() {
@@ -2469,6 +2487,8 @@ __webpack_require__.r(__webpack_exports__);
     this.axios.get('http://localhost:8000/api/totalamount').then(function (response) {
       _this.totalamount = response.data;
     });
+    /** MONTHLY EXPENSES MONTHLY EXPENSES *MONTHLY EXPENSES *MONTHLY EXPENSES **/
+
     this.axios.get('api/january').then(function (response) {
       _this.jan = response.data;
     });
@@ -2504,6 +2524,44 @@ __webpack_require__.r(__webpack_exports__);
     });
     this.axios.get('api/december').then(function (response) {
       _this.dec = response.data;
+    });
+    /** MONTHLY REQUESTS MONTHLY REQUESTS MONTHLY REQUESTS MONTHLY REQUESTS */
+
+    this.axios.get('api/janrequest').then(function (response) {
+      _this.janreq = response.data;
+    });
+    this.axios.get('api/febrequest').then(function (response) {
+      _this.febreq = response.data;
+    });
+    this.axios.get('api/marrequest').then(function (response) {
+      _this.marreq = response.data;
+    });
+    this.axios.get('api/aprrequest').then(function (response) {
+      _this.aprreq = response.data;
+    });
+    this.axios.get('api/mayrequest').then(function (response) {
+      _this.mayreq = response.data;
+    });
+    this.axios.get('api/junrequest').then(function (response) {
+      _this.junreq = response.data;
+    });
+    this.axios.get('api/julrequest').then(function (response) {
+      _this.julreq = response.data;
+    });
+    this.axios.get('api/augrequest').then(function (response) {
+      _this.augreq = response.data;
+    });
+    this.axios.get('api/seprequest').then(function (response) {
+      _this.sepreq = response.data;
+    });
+    this.axios.get('api/octrequest').then(function (response) {
+      _this.octreq = response.data;
+    });
+    this.axios.get('api/novrequest').then(function (response) {
+      _this.novreq = response.data;
+    });
+    this.axios.get('api/decrequest').then(function (response) {
+      _this.decreq = response.data;
     });
   },
   methods: {
@@ -94584,7 +94642,7 @@ var render = function() {
           { staticClass: "card border-0 col-md-8 bg-transparent mt-4" },
           [
             _c("div", { staticClass: "card-header border bg-transparent" }, [
-              _vm._v("\n                    Line Chart\n                ")
+              _vm._v("\n                    MONTHLY REQUESTS\n                ")
             ]),
             _vm._v(" "),
             _c(
@@ -94594,10 +94652,18 @@ var render = function() {
                 _c("area-chart", {
                   attrs: {
                     data: {
-                      "2017-01-01": 2,
-                      "2017-03-01": 5,
-                      "2017-02-01": 9,
-                      "2017-04-01": 7
+                      Jan: _vm.jareq,
+                      Feb: _vm.febreq,
+                      Mar: _vm.marreq,
+                      Apr: _vm.aprreq,
+                      May: _vm.mayreq,
+                      Jun: _vm.junreq,
+                      Jul: _vm.julreq,
+                      Aug: _vm.augreq,
+                      Sep: _vm.sepreq,
+                      Oct: _vm.octreq,
+                      Nov: _vm.novreq,
+                      Dec: _vm.decreq
                     }
                   }
                 })

@@ -91,3 +91,17 @@ Route::get('september', 'ValeController@SeptemberExpense');
 Route::get('october', 'ValeController@OctoberExpense');
 Route::get('november', 'ValeController@NovemberExpense');
 Route::get('december', 'ValeController@DecemberExpense');
+
+/** MONTHLY REQUESTS */
+Route::get('janrequest', 'ValeController@JanRequests');
+Route::get('febrequest', 'ValeController@FebRequests');
+Route::get('marrequest', 'ValeController@MarRequests');
+Route::get('aprrequest', 'ValeController@AprRequests');
+Route::get('mayrequest', 'ValeController@MayRequests');
+Route::get('junrequest', 'ValeController@JunRequests');
+Route::get('julrequest', 'ValeController@JulRequests');
+Route::get('augrequest', 'ValeController@AugRequests');
+Route::get('seprequest', 'ValeController@SepRequests');
+Route::get('octrequest', 'ValeController@OctRequests');
+Route::get('novrequest', 'ValeController@NovRequests');
+Route::get('decrequest', 'ValeController@DecRequests');

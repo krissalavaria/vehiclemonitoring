@@ -55,11 +55,12 @@
                 </div>
                 <div class="card border-0 col-md-8 bg-transparent mt-4">
                     <div class="card-header border bg-transparent">
-                        Line Chart
+                        MONTHLY REQUESTS
                     </div>
                     <div class="card-body border">
                         <area-chart
-                            :data="{'2017-01-01': 2, '2017-03-01': 5, '2017-02-01': 9, '2017-04-01': 7}"></area-chart>
+                            :data="{'Jan': jareq, 'Feb': febreq, 'Mar': marreq, 'Apr': aprreq, 'May': mayreq, 'Jun': junreq,
+                            'Jul': julreq, 'Aug': augreq, 'Sep': sepreq, 'Oct': octreq, 'Nov': novreq, 'Dec': decreq}"></area-chart>
                     </div>
                 </div>
             </div>
@@ -109,6 +110,7 @@
                 drivers: [],
                 vehicles: [],
                 totalamount: 0,
+                monthlyrequest: 0,
                 columns: [
                     {
                         label: 'ID',
@@ -177,10 +179,16 @@
                         'value': 'utf-8'
                     }]
                 ],
+                /** MONTHLY EXPENSES */
                 jan: null, feb: null, mar: null,
                 apr: null, may: null, jun: null,
                 jul: null, aug: null, sep: null,
                 oct: null, nov: null, dec: null,
+                /** MONTHLY REQUESTS */
+                janreq: null, febreq: null, marreq: null,
+                aprreq: null, mayreq: null, junreq: null,
+                julreq: null, augreq: null, sepreq: null,
+                octreq: null, novreq: null, decreq: null,
             }
         },
         created() {
@@ -204,66 +212,34 @@
                 .then(response => {
                     this.totalamount = response.data;
                 });
-            this.axios
-                .get('api/january')
-                .then(response => {
-                    this.jan = response.data;
-                });
-            this.axios
-                .get('api/february')
-                .then(response => {
-                    this.feb = response.data;
-                });
-            this.axios
-                .get('api/march')
-                .then(response => {
-                    this.mar = response.data;
-                });
-            this.axios
-                .get('api/april')
-                .then(response => {
-                    this.apr = response.data;
-                });
-            this.axios
-                .get('api/may')
-                .then(response => {
-                    this.may = response.data;
-                });
-            this.axios
-                .get('api/june')
-                .then(response => {
-                    this.jun = response.data;
-                });
-            this.axios
-                .get('api/july')
-                .then(response => {
-                    this.jul = response.data;
-                });
-            this.axios
-                .get('api/august')
-                .then(response => {
-                    this.aug = response.data;
-                });
-            this.axios
-                .get('api/september')
-                .then(response => {
-                    this.sep = response.data;
-                });
-            this.axios
-                .get('api/october')
-                .then(response => {
-                    this.oct = response.data;
-                });
-            this.axios
-                .get('api/november')
-                .then(response => {
-                    this.nov = response.data;
-                });
-            this.axios
-                .get('api/december')
-                .then(response => {
-                    this.dec = response.data;
-                });
+
+            /** MONTHLY EXPENSES MONTHLY EXPENSES *MONTHLY EXPENSES *MONTHLY EXPENSES **/
+            this.axios.get('api/january').then(response => { this.jan = response.data; });
+            this.axios.get('api/february').then(response => { this.feb = response.data; });
+            this.axios.get('api/march').then(response => { this.mar = response.data; });
+            this.axios.get('api/april').then(response => { this.apr = response.data; });
+            this.axios.get('api/may').then(response => { this.may = response.data; });
+            this.axios.get('api/june').then(response => { this.jun = response.data; });
+            this.axios.get('api/july').then(response => { this.jul = response.data; });
+            this.axios.get('api/august').then(response => { this.aug = response.data; });
+            this.axios.get('api/september').then(response => { this.sep = response.data; });
+            this.axios.get('api/october').then(response => { this.oct = response.data; });
+            this.axios.get('api/november').then(response => { this.nov = response.data; });
+            this.axios.get('api/december').then(response => { this.dec = response.data; });
+
+            /** MONTHLY REQUESTS MONTHLY REQUESTS MONTHLY REQUESTS MONTHLY REQUESTS */
+            this.axios.get('api/janrequest').then(response => { this.janreq = response.data });
+            this.axios.get('api/febrequest').then(response => { this.febreq = response.data });
+            this.axios.get('api/marrequest').then(response => { this.marreq = response.data });
+            this.axios.get('api/aprrequest').then(response => { this.aprreq = response.data });
+            this.axios.get('api/mayrequest').then(response => { this.mayreq = response.data });
+            this.axios.get('api/junrequest').then(response => { this.junreq = response.data });
+            this.axios.get('api/julrequest').then(response => { this.julreq = response.data });
+            this.axios.get('api/augrequest').then(response => { this.augreq = response.data });
+            this.axios.get('api/seprequest').then(response => { this.sepreq = response.data });
+            this.axios.get('api/octrequest').then(response => { this.octreq = response.data });
+            this.axios.get('api/novrequest').then(response => { this.novreq = response.data });
+            this.axios.get('api/decrequest').then(response => { this.decreq = response.data });
         },
         methods: {
             valeId(rowObj) {
