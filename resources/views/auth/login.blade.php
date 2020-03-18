@@ -5,7 +5,12 @@
     <div class="row justify-content-center" style="margin-top: 15%;">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header bg-primary text-light">{{ __('LOGIN - VEHICLE MONITORING') }}</div>
+                <div class="card-header bg-danger text-light d-flex">
+                    <strong><p class="mt-3 text">{{ __('LOGIN - RIBSHACK VEHICLE MONITORING') }}</p></strong>
+                    <div class="col">
+                        <img src="{{ asset('img/ribshack.png') }}" class="float-right" style="width: 100px; height: auto;">
+                    </div>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -52,7 +57,7 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col">
-                                <button type="submit" class="btn btn-primary col-md-12">
+                                <button type="submit" class="btn btn-danger col-md-12">
                                     {{ __('Login') }}
                                 </button>
                             </div>

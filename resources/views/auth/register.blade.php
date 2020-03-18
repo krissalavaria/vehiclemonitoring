@@ -6,7 +6,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primary text-light">{{ __('REGISTER AN ACCOUNT') }}</div>
+                <div class="card-header bg-danger text-light d-flex">
+                    <strong><p class="mt-3 text">{{ __('REGISTER - RIBSHACK VEHICLE MONITORING') }}</p></strong>
+                    <div class="col">
+                        <img src="{{ asset('img/ribshack.png') }}" class="float-right" style="width: 100px; height: auto;">
+                    </div>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -64,10 +69,10 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary col-md-6">
+                                <button type="submit" class="btn btn-danger col-md-6">
                                     {{ __('Create Account') }}
                                 </button>
-                                <a href="/login" class="btn btn-danger">
+                                <a href="/login" class="btn btn-warning text-white col-md-5">
                                     {{ __('Back') }}
                                 </a>
                             </div>

@@ -14,29 +14,24 @@
 </head>
 <body class="bg-light">
     <div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar" class="in-active">
+    <nav id="sidebar" class="in-active bg-danger">
       <br>
-      <h1><a href="index.html" class="logo">ADMIN.</a></h1>
+      <h1><a href="index.html" class="logo">A.</a></h1>
       <ul class="list-unstyled components mb-5">
-        <li class="">
-          <a href="/admins.adminmain"><span class="fa fa-home"></span> Dashboard</a>
+        <li>
+          <a href="/admins.adminmain">Dashboard</a>
         </li>
-        <li class="">
-          <a href="/vehicles.vehiclemain"><span class="fa fa-car"></span>Vehicles</a>
+        <li>
+          <a href="/vehicles.vehiclemain">Vehicles</a>
         </li>
-        <li class="">
-          <a href="/drivers.drivermain"><span class="fa fa-user"></span> Drivers</a>
+        <li>
+          <a href="/drivers.drivermain">Drivers</a>
         </li>
-        <li class="">
-          <a href="/fuels.fuelmain"><span class="fa fa-tint"></span> Fuel Rate</a>
+        <li>
+          <a href="/fuels.fuelmain">Fuel Rate</a>
         </li>
-        <li class="">
-          <a href="/reports.reportsmain"><span class="fa fa-sticky-note"></span> Reports</a>
-          <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-sticky-note"></span>Reports</a>
-            <div class="col-sm-4 dropdown-menu">
-              <a class="dropdown-item" href="/reports.reportsmain" style="color: black">Request Form</a>
-              <a class="dropdown-item" href="#" style="color: black">Date to Date Per Vehicle Fuel Expenses Report</a>
-            </div> -->
+        <li>
+          <a href="/reports.reportsmain">Reports</a>
         </li>
       </ul>
 
