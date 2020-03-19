@@ -14,15 +14,15 @@
 </head>
 <body>
     <div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar" class="in-active">
+    <nav id="sidebar" class="in-active bg-danger">
       <br>
       <h1><a href="index.html" class="logo">USER.</a></h1>
       <ul class="list-unstyled components mb-5">
         <li class="active">
-          <a href="#"><span class="fa fa-home"></span> Home</a>
+          <a href="#">Home</a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-paper-plane"></span> Contacts</a>
+          <a href="#">Contacts</a>
         </li>
       </ul>
       <div class="footer">
@@ -36,7 +36,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
 
-          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+          <button type="button" id="sidebarCollapse" class="btn btn-danger">
             <i class="fa fa-bars"></i>
             <span class="sr-only">Toggle Menu</span>
           </button>
@@ -66,6 +66,6 @@
   <script src="{{ asset('js/popper.js') }}" type="text/javascript"></script>
   <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
   <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
-  
+
 </body>
 </html>

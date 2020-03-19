@@ -3,7 +3,7 @@
 @section('content')
   <div class="card uper">
     <div class="card-header" style="display: flex;">
-      <a type="button" class="btn btn-primary col-sm-2" style="color:white;" href="{{ route('vales.create') }}">
+      <a type="button" class="btn btn-danger col-sm-2" style="color:white;" href="{{ route('vales.create') }}">
         <span class="fa fa-sticky-note pr-2"></span>Request Form
       </a>
     </div>

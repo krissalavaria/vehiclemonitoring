@@ -67,6 +67,7 @@ class ValeController extends Controller
             'form_status' => $request->input('form_status'),
             'vehicle_description' => $request->input('vehicle_description'),
         ]);
+        $valesarray->save();
         return response()->json('Request successfully added.');
     }
 
@@ -119,7 +120,7 @@ class ValeController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -150,7 +151,7 @@ class ValeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Vale $vale
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit(Vale $vale)
     {
@@ -162,7 +163,7 @@ class ValeController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Vale $vale
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Vale $vale)
     {

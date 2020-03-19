@@ -17,6 +17,6 @@ class Vale extends Model
       'total_amount',
       'receipt_number',
       'form_status',
-      'vehicle_description'
+      'vehicle_description',
     ];
 }
