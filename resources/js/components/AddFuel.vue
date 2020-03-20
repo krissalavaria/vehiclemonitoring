@@ -57,12 +57,12 @@
         },
         created() {
             this.axios
-                .get('http://localhost:8000/api/vehicles')
+                .get('api/vehicles')
                 .then(response => {
                     this.vehicles = response.data;
                 });
             this.axios
-                .get('http://localhost:8000/api/vales')
+                .get('api/vales')
                 .then(response => {
                     this.vales = response.data;
                 });
@@ -71,7 +71,7 @@
             addFuel() {
 
                 this.axios
-                    .post('http://localhost:8000/api/fuel/add', this.fuel)
+                    .post('api/fuel/add', this.fuel)
                     .then(response => (
                         this.$router.push({name: 'fuelmain'})
                         // console.log(response.data)

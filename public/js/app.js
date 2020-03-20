@@ -1999,7 +1999,7 @@ __webpack_require__.r(__webpack_exports__);
     addAdmin: function addAdmin() {
       var _this = this;
 
-      this.axios.post('http://localhost:8000/api/vale/addAdmin', this.vale).then(function (response) {
+      this.axios.post('api/vale/addAdmin', this.vale).then(function (response) {
         return _this.$router.push({
           name: 'adminmain'
         });
@@ -2073,7 +2073,7 @@ __webpack_require__.r(__webpack_exports__);
     addDriver: function addDriver() {
       var _this = this;
 
-      this.axios.post('http://localhost:8000/api/driver/addDriver', this.driver).then(function (response) {
+      this.axios.post('api/driver/addDriver', this.driver).then(function (response) {
         return _this.$router.push({
           name: 'drivermain'
         }) // console.log(response.data)
@@ -2157,10 +2157,10 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get('http://localhost:8000/api/vehicles').then(function (response) {
+    this.axios.get('api/vehicles').then(function (response) {
       _this.vehicles = response.data;
     });
-    this.axios.get('http://localhost:8000/api/vales').then(function (response) {
+    this.axios.get('api/vales').then(function (response) {
       _this.vales = response.data;
     });
   },
@@ -2168,7 +2168,7 @@ __webpack_require__.r(__webpack_exports__);
     addFuel: function addFuel() {
       var _this2 = this;
 
-      this.axios.post('http://localhost:8000/api/fuel/add', this.fuel).then(function (response) {
+      this.axios.post('api/fuel/add', this.fuel).then(function (response) {
         return _this2.$router.push({
           name: 'fuelmain'
         }) // console.log(response.data)
@@ -2246,7 +2246,7 @@ __webpack_require__.r(__webpack_exports__);
     addVehicle: function addVehicle() {
       var _this = this;
 
-      this.axios.post('http://localhost:8000/api/vehicle/addVehicle', this.vehicle).then(function (response) {
+      this.axios.post('api/vehicle/addVehicle', this.vehicle).then(function (response) {
         return _this.$router.push({
           name: 'vehiclemain'
         }) // console.log(response.data)
@@ -2657,7 +2657,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get('http://localhost:8000/api/drivers').then(function (response) {
+    this.axios.get('api/drivers').then(function (response) {
       _this.drivers = response.data;
     });
   },
@@ -2751,7 +2751,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get('http://localhost:8000/api/fuels').then(function (response) {
+    this.axios.get('api/fuels').then(function (response) {
       _this.fuels = response.data;
     });
   },
@@ -2858,7 +2858,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get('http://localhost:8000/api/vehicles').then(function (response) {
+    this.axios.get('api/vehicles').then(function (response) {
       _this.vehicles = response.data;
     });
   },
@@ -2947,7 +2947,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://localhost:8000/api/vale/edit/".concat(this.$route.params.id)).then(function (response) {
+    this.axios.get("/api/vale/edit/".concat(this.$route.params.id)).then(function (response) {
       _this.vale = response.data;
     });
   },
@@ -2955,7 +2955,7 @@ __webpack_require__.r(__webpack_exports__);
     updateAdmin: function updateAdmin() {
       var _this2 = this;
 
-      this.axios.post("http://localhost:8000/api/vale/update/".concat(this.$route.params.id), this.vale).then(function (response) {
+      this.axios.post("/api/vale/update/".concat(this.$route.params.id), this.vale).then(function (response) {
         _this2.$router.push({
           name: 'adminmain'
         });
@@ -2964,7 +2964,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteAdmin: function deleteAdmin(id) {
       var _this3 = this;
 
-      this.axios["delete"]("http://localhost:8000/api/vale/delete/".concat(id)).then(function (response) {
+      this.axios["delete"]("/api/vale/delete/".concat(id)).then(function (response) {
         _this3.$router.push({
           name: 'adminmain'
         });
@@ -3043,7 +3043,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://localhost:8000/api/driver/edit/".concat(this.$route.params.id)).then(function (response) {
+    this.axios.get("/api/driver/edit/".concat(this.$route.params.id)).then(function (response) {
       _this.driver = response.data; // console.log(response.data);
     });
   },
@@ -3051,7 +3051,7 @@ __webpack_require__.r(__webpack_exports__);
     updateDriver: function updateDriver() {
       var _this2 = this;
 
-      this.axios.post("http://localhost:8000/api/driver/update/".concat(this.$route.params.id), this.driver).then(function (response) {
+      this.axios.post("/api/driver/update/".concat(this.$route.params.id), this.driver).then(function (response) {
         _this2.$router.push({
           name: 'drivermain'
         });
@@ -3060,7 +3060,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteDriver: function deleteDriver(id) {
       var _this3 = this;
 
-      this.axios["delete"]("http://localhost:8000/api/driver/delete/".concat(id)).then(function (response) {
+      this.axios["delete"]("/api/driver/delete/".concat(id)).then(function (response) {
         _this3.$router.push({
           name: 'drivermain'
         });
@@ -3135,7 +3135,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://localhost:8000/api/fuel/edit/".concat(this.$route.params.id)).then(function (response) {
+    this.axios.get("/api/fuel/edit/".concat(this.$route.params.id)).then(function (response) {
       _this.fuel = response.data; // console.log(response.data);
     });
   },
@@ -3143,7 +3143,7 @@ __webpack_require__.r(__webpack_exports__);
     updateFuel: function updateFuel() {
       var _this2 = this;
 
-      this.axios.post("http://localhost:8000/api/fuel/update/".concat(this.$route.params.id), this.fuel).then(function (response) {
+      this.axios.post("/api/fuel/update/".concat(this.$route.params.id), this.fuel).then(function (response) {
         _this2.$router.push({
           name: 'fuelmain'
         });
@@ -3152,7 +3152,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteFuel: function deleteFuel(id) {
       var _this3 = this;
 
-      this.axios["delete"]("http://localhost:8000/api/fuel/delete/".concat(id)).then(function (response) {
+      this.axios["delete"]("/api/fuel/delete/".concat(id)).then(function (response) {
         _this3.$router.push({
           name: 'fuelmain'
         });
@@ -3223,7 +3223,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://localhost:8000/api/vehicle/edit/".concat(this.$route.params.id)).then(function (response) {
+    this.axios.get("/api/vehicle/edit/".concat(this.$route.params.id)).then(function (response) {
       _this.vehicle = response.data; // console.log(response.data);
     });
   },
@@ -3231,7 +3231,7 @@ __webpack_require__.r(__webpack_exports__);
     updateVehicle: function updateVehicle() {
       var _this2 = this;
 
-      this.axios.post("http://localhost:8000/api/vehicle/update/".concat(this.$route.params.id), this.vehicle).then(function (response) {
+      this.axios.post("/api/vehicle/update/".concat(this.$route.params.id), this.vehicle).then(function (response) {
         _this2.$router.push({
           name: 'vehiclemain'
         });
@@ -3240,7 +3240,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteVehicle: function deleteVehicle(id) {
       var _this3 = this;
 
-      this.axios["delete"]("http://localhost:8000/api/vehicle/delete/".concat(id)).then(function (response) {
+      this.axios["delete"]("/api/vehicle/delete/".concat(id)).then(function (response) {
         _this3.$router.push({
           name: 'vehiclemain'
         });
@@ -3533,7 +3533,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get('http://localhost:8000/api/vales').then(function (response) {
+    this.axios.get('api/vales').then(function (response) {
       _this.vales = response.data;
     });
     this.filtered();
@@ -3545,11 +3545,11 @@ __webpack_require__.r(__webpack_exports__);
       this.customer = event.target.value;
 
       if (this.customer == '') {
-        this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
+        this.axios.get('api/getallrequests').then(function (response) {
           _this2.vales = response.data;
         });
       } else {
-        this.axios.get('http://localhost:8000/api/getcustomer/' + this.customer).then(function (response) {
+        this.axios.get('api/getcustomer/' + this.customer).then(function (response) {
           _this2.vales = response.data;
         });
       }
@@ -3560,11 +3560,11 @@ __webpack_require__.r(__webpack_exports__);
       this.status = event.target.value;
 
       if (this.status == 'all') {
-        this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
+        this.axios.get('api/getallrequests').then(function (response) {
           _this3.vales = response.data;
         });
       } else {
-        this.axios.get('http://localhost:8000/api/getstatus/' + this.status).then(function (response) {
+        this.axios.get('api/getstatus/' + this.status).then(function (response) {
           _this3.vales = response.data;
         });
       }
@@ -3575,11 +3575,11 @@ __webpack_require__.r(__webpack_exports__);
       this.created = event.target.value;
 
       if (this.created == 'all') {
-        this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
+        this.axios.get('api/getallrequests').then(function (response) {
           _this4.vales = response.data;
         });
       } else {
-        this.axios.get('http://localhost:8000/api/requestbydate/' + this.created).then(function (response) {
+        this.axios.get('api/requestbydate/' + this.created).then(function (response) {
           _this4.vales = response.data;
         });
       }
@@ -3590,11 +3590,11 @@ __webpack_require__.r(__webpack_exports__);
       this.vehicle = event.target.value;
 
       if (this.vehicle == '') {
-        this.axios.get('http://localhost:8000/api/getallrequests').then(function (response) {
+        this.axios.get('api/getallrequests').then(function (response) {
           _this5.vales = response.data;
         });
       } else {
-        this.axios.get('http://localhost:8000/api/reportsvehicle/' + this.vehicle).then(function (response) {
+        this.axios.get('api/reportsvehicle/' + this.vehicle).then(function (response) {
           _this5.vales = response.data;
         });
       }
@@ -95888,7 +95888,7 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "card" }, [
       _c("div", { staticClass: "card-header" }, [
-        _vm._v("\r\n            Edit Vehicle Information\r\n        ")
+        _vm._v("\n            Edit Vehicle Information\n        ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [

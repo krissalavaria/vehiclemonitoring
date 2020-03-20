@@ -46,7 +46,7 @@
         },
         created() {
             this.axios
-                .get(`http://localhost:8000/api/fuel/edit/${this.$route.params.id}`)
+                .get(`/api/fuel/edit/${this.$route.params.id}`)
                 .then((response) => {
                     this.fuel = response.data;
                     // console.log(response.data);
@@ -55,14 +55,14 @@
         methods: {
             updateFuel() {
                 this.axios
-                    .post(`http://localhost:8000/api/fuel/update/${this.$route.params.id}`, this.fuel)
+                    .post(`/api/fuel/update/${this.$route.params.id}`, this.fuel)
                     .then((response) => {
                         this.$router.push({name: 'fuelmain'});
                     });
             },
             deleteFuel(id) {
             this.axios
-                .delete(`http://localhost:8000/api/fuel/delete/${id}`)
+                .delete(`/api/fuel/delete/${id}`)
                 .then(response => {
                     this.$router.push({
                         name: 'fuelmain'

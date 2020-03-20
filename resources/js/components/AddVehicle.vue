@@ -50,7 +50,7 @@
             addVehicle() {
 
                 this.axios
-                    .post('http://localhost:8000/api/vehicle/addVehicle', this.vehicle)
+                    .post('api/vehicle/addVehicle', this.vehicle)
                     .then(response => (
                         this.$router.push({name: 'vehiclemain'})
                         // console.log(response.data)

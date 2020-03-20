@@ -64,7 +64,7 @@ export default {
     },
     created() {
         this.axios
-            .get(`http://localhost:8000/api/vale/edit/${this.$route.params.id}`)
+            .get(`/api/vale/edit/${this.$route.params.id}`)
             .then((response) => {
                 this.vale = response.data;
             });
@@ -72,7 +72,7 @@ export default {
     methods: {
         updateAdmin() {
             this.axios
-                .post(`http://localhost:8000/api/vale/update/${this.$route.params.id}`, this.vale)
+                .post(`/api/vale/update/${this.$route.params.id}`, this.vale)
                 .then((response) => {
                     this.$router.push({
                         name: 'adminmain'
@@ -81,7 +81,7 @@ export default {
         },
         deleteAdmin(id) {
             this.axios
-                .delete(`http://localhost:8000/api/vale/delete/${id}`)
+                .delete(`/api/vale/delete/${id}`)
                 .then(response => {
                     this.$router.push({
                         name: 'adminmain'

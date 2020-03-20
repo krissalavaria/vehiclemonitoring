@@ -49,7 +49,7 @@
             addDriver() {
 
                 this.axios
-                    .post('http://localhost:8000/api/driver/addDriver', this.driver)
+                    .post('api/driver/addDriver', this.driver)
                     .then(response => (
                         this.$router.push({name: 'drivermain'})
                         // console.log(response.data)

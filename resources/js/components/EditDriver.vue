@@ -50,7 +50,7 @@
         },
         created() {
             this.axios
-                .get(`http://localhost:8000/api/driver/edit/${this.$route.params.id}`)
+                .get(`/api/driver/edit/${this.$route.params.id}`)
                 .then((response) => {
                     this.driver = response.data;
                     // console.log(response.data);
@@ -59,14 +59,14 @@
         methods: {
             updateDriver() {
                 this.axios
-                    .post(`http://localhost:8000/api/driver/update/${this.$route.params.id}`, this.driver)
+                    .post(`/api/driver/update/${this.$route.params.id}`, this.driver)
                     .then((response) => {
                         this.$router.push({name: 'drivermain'});
                     });
             },
             deleteDriver(id) {
             this.axios
-                .delete(`http://localhost:8000/api/driver/delete/${id}`)
+                .delete(`/api/driver/delete/${id}`)
                 .then(response => {
                     this.$router.push({
                         name: 'drivermain'

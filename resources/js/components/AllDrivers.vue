@@ -83,7 +83,7 @@
         },
         created() {
             this.axios
-                .get('http://localhost:8000/api/drivers')
+                .get('api/drivers')
                 .then(response => {
                     this.drivers = response.data;
                 });

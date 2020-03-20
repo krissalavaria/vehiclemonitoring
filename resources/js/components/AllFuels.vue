@@ -79,7 +79,7 @@
         },
         created() {
             this.axios
-                .get('http://localhost:8000/api/fuels')
+                .get('api/fuels')
                 .then(response => {
                     this.fuels = response.data;
                 });

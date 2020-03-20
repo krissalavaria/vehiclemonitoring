@@ -94,7 +94,7 @@ export default {
     },
     created() {
         this.axios
-            .get('http://localhost:8000/api/vehicles')
+            .get('api/vehicles')
             .then(response => {
                 this.vehicles = response.data;
             });

@@ -72,7 +72,7 @@ export default {
     methods: {
         addAdmin() {
             this.axios
-                .post('http://localhost:8000/api/vale/addAdmin', this.vale)
+                .post('api/vale/addAdmin', this.vale)
                 .then(response => (
                     this.$router.push({
                         name: 'adminmain'

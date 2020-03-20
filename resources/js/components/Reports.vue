@@ -246,7 +246,7 @@
         },
         created() {
             this.axios
-                .get('http://localhost:8000/api/vales')
+                .get('api/vales')
                 .then(response => {
                     this.vales = response.data;
                 });
@@ -257,13 +257,13 @@
                 this.customer = event.target.value;
                 if (this.customer == '') {
                     this.axios
-                        .get('http://localhost:8000/api/getallrequests')
+                        .get('api/getallrequests')
                         .then(response => {
                             this.vales = response.data;
                         });
                 } else {
                     this.axios
-                        .get('http://localhost:8000/api/getcustomer/' + this.customer)
+                        .get('api/getcustomer/' + this.customer)
                         .then(response => {
                             this.vales = response.data;
                         });
@@ -273,13 +273,13 @@
                 this.status = event.target.value;
                 if (this.status == 'all') {
                     this.axios
-                        .get('http://localhost:8000/api/getallrequests')
+                        .get('api/getallrequests')
                         .then(response => {
                             this.vales = response.data;
                         });
                 } else {
                     this.axios
-                        .get('http://localhost:8000/api/getstatus/' + this.status)
+                        .get('api/getstatus/' + this.status)
                         .then(response => {
                             this.vales = response.data;
                         });
@@ -289,13 +289,13 @@
                 this.created = event.target.value;
                 if (this.created == 'all') {
                     this.axios
-                        .get('http://localhost:8000/api/getallrequests')
+                        .get('api/getallrequests')
                         .then(response => {
                             this.vales = response.data;
                         });
                 } else {
                     this.axios
-                        .get('http://localhost:8000/api/requestbydate/' + this.created)
+                        .get('api/requestbydate/' + this.created)
                         .then(response => {
                             this.vales = response.data;
                         });
@@ -305,13 +305,13 @@
                 this.vehicle = event.target.value;
                 if (this.vehicle == '') {
                     this.axios
-                        .get('http://localhost:8000/api/getallrequests')
+                        .get('api/getallrequests')
                         .then(response => {
                             this.vales = response.data;
                         });
                 } else {
                     this.axios
-                        .get('http://localhost:8000/api/reportsvehicle/' + this.vehicle)
+                        .get('api/reportsvehicle/' + this.vehicle)
                         .then(response => {
                             this.vales = response.data;
                         });

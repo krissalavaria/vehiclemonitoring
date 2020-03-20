@@ -42,7 +42,7 @@ export default {
     },
     created() {
         this.axios
-            .get(`http://localhost:8000/api/vehicle/edit/${this.$route.params.id}`)
+            .get(`/api/vehicle/edit/${this.$route.params.id}`)
             .then((response) => {
                 this.vehicle = response.data;
                 // console.log(response.data);
@@ -51,7 +51,7 @@ export default {
     methods: {
         updateVehicle() {
             this.axios
-                .post(`http://localhost:8000/api/vehicle/update/${this.$route.params.id}`, this.vehicle)
+                .post(`/api/vehicle/update/${this.$route.params.id}`, this.vehicle)
                 .then((response) => {
                     this.$router.push({
                         name: 'vehiclemain'
@@ -60,7 +60,7 @@ export default {
         },
         deleteVehicle(id) {
             this.axios
-                .delete(`http://localhost:8000/api/vehicle/delete/${id}`)
+                .delete(`/api/vehicle/delete/${id}`)
                 .then(response => {
                     this.$router.push({
                         name: 'vehiclemain'
