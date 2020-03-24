@@ -15,7 +15,7 @@ class ValeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -55,6 +55,7 @@ class ValeController extends Controller
     public function addarray(Request $request)
     {
         $valesarray = new Vale([
+            'user_id' => $request->input('user_id'),
             'customer_name' => $request->input('customer_name'),
             'date' => $request->input('date'),
             'address' => $request->input('address'),
@@ -125,10 +126,12 @@ class ValeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'user_id' => 'required',
             'customer_name' => 'required',
             'date' => 'required',
             'address' => 'required',
             'plate_number' => 'required',
+            'vehicle_description' => 'required'
         ]);
 
         Vale::create($request->all());
@@ -190,7 +193,7 @@ class ValeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param \App\Vale $vale
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Vale $vale)
     {

@@ -15,7 +15,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('vales.update', $vale->id) }}">
+      <form class="update" method="post" action="{{ route('vales.update', $vale->id) }}">
         @csrf
         @method('PUT')
         <div class="form-row">
@@ -76,12 +76,17 @@
               <label for="total_amount">Total Amount:</label>
               <input type="number" class="form-control" name="total_amount" id="total_amount" value={{ $vale->total_amount }} />
             </div>
-            <div class="col" style="margin-top:32px;">
-              <button type="submit" class="btn btn-primary col-sm-4">Update</button>
-              <a class="btn btn-danger col-sm-3" href="{{ route('vales.index') }}">Cancel</a>
-            </div>
+                <div class="col" style="margin-top:32px;">
+                    <button type="submit" class="btn btn-primary col-sm-4">Update</button>
+                    <a class="btn btn-danger col-sm-3" href="{{ route('vales.index') }}">Cancel</a>
+                </div>
         </div>
       </form>
   </div>
 </div>
+<script type="text/javascript">
+    $(".update").on("submit", function(){
+        return confirm("Are you sure?");
+    });
+</script>
 @endsection

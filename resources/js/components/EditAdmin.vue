@@ -5,7 +5,7 @@
               Edit Form Information
           </div>
           <div class="card-body">
-              <form @submit.prevent="updateAdmin">
+              <form class="update" @submit.prevent="updateAdmin">
                   <div class="form-row">
                     <div class="col">
                         <label>Form Status</label>
@@ -88,9 +88,10 @@ export default {
                     });
                     let i = this.vales.map(item => item.id).indexOf(id); // find index of your object
                     this.vales.splice(i, 1);
-
                 });
-        }
+        },
+
     }
 }
 </script>
+

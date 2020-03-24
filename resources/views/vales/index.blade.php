@@ -33,6 +33,7 @@
           </thead>
           <tbody>
               @foreach($vales as $vale)
+              @if(count($vales) > 0)
               <tr>
                   <td>{{$vale->id}}</td>
                   @if($vale->form_status == 'Pending')
@@ -57,13 +58,16 @@
                   <td style="display: flex;">
                     <a href="{{ route('vales.edit', $vale->id)}}" class="btn btn-warning"><span class="fa fa-edit" style="color:white;"></span></a>
                     <a class="btn btn-primary" href="{{ route('vales.show', $vale->id) }}"><span class="fa fa-print"></span></a>
-                    <form action="{{ route('vales.destroy', $vale->id)}}" method="post">
+                    <form class="delete" action="{{ route('vales.destroy', $vale->id)}}" method="post">
                       @csrf
                       @method('DELETE')
                       <button class="btn btn-danger" type="submit"><span class="fa fa-trash"></span></button>
                     </form>
                   </td>
               </tr>
+              @else
+                  <p>No records to display</p>
+              @endif
               @endforeach
           </tbody>
         </table>
@@ -73,6 +77,8 @@
     </div>
 </div>
 <script type="text/javascript">
-
+    $(".delete").on("submit", function(){
+        return confirm("Are you sure?");
+    });
 </script>
 @endsection

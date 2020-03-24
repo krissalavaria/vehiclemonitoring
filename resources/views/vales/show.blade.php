@@ -45,6 +45,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <strong>Quantity/Volume:</strong>
+                            {{ $vale->quantity }}
+                        </div>
+                    </div>
                     <table class="table table-striped">
                         <thead>
                         <tr>

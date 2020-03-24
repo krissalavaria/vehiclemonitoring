@@ -95089,6 +95089,7 @@ var render = function() {
         _c(
           "form",
           {
+            staticClass: "update",
             on: {
               submit: function($event) {
                 $event.preventDefault()
